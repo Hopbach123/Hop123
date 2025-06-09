@@ -1,0 +1,2767 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thông tin sản phẩm - HUIT VUITON</title>
+    <!-- Thêm Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Thêm Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts Playfair Display & Quicksand -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Link đến CSS tùy chỉnh của bạn -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+        /* CSS cho Header (giữ nguyên hoặc tùy chỉnh theo file CSS của bạn) */
+        .header-top {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            font-size: 0.9em;
+        }
+
+        .header-mid {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: 1px solid #eee;
+            background-color: #fff;
+            position: relative;
+        }
+
+        .header-mid-content p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .header-mid-brand h1 {
+            margin: 0;
+            text-align: center;
+        }
+
+        .header-mid-brand h1 a {
+            text-decoration: none;
+            color: #333;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        .header-mid-contect {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.1rem;
+            position: relative; /* Để search-bar và login-form định vị tương đối */
+        }
+
+        .header-mid-contect p {
+            margin: 0;
+            text-align: right;
+        }
+
+        .header-mid-contect p a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .header-mid-contect i {
+            cursor: pointer;
+            font-size: 1.4rem;
+            color: #333;
+        }
+
+        .header-mid-contect a {
+            color: #333; /* Đảm bảo màu biểu tượng giỏ hàng */
+            position: relative; /* Để badge số lượng hiển thị đúng */
+        }
+
+        #cartQuantity {
+            position: absolute;
+            top: -8px;
+            right: -10px;
+            background-color: red;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.7em;
+            line-height: 1;
+            display: none; /* Mặc định ẩn, chỉ hiện khi có sp */
+            z-index: 10;
+        }
+
+
+        .search-bar, .login-form {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: none; /* Ẩn theo mặc định */
+            width: 300px; /* Độ rộng của form */
+        }
+
+        .search-bar.active, .login-form.active {
+            display: block;
+        }
+
+        .search-label, .login-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .search-input-container, .login-input-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+            flex-wrap: wrap; /* Cho phép các input xuống dòng nếu cần */
+        }
+
+        .search-input-container input, .login-input-container input {
+            flex-grow: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .search-input-container button, .login-input-container button {
+            padding: 8px 15px;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .search-input-container button:hover, .login-input-container button:hover {
+            background-color: #555;
+        }
+
+        .login-input-container .text-form {
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .header-bot {
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-menu .navbar-nav {
+            width: 100%;
+            justify-content: center;
+        }
+
+        .nav-menu .nav-item {
+            margin: 0 15px;
+        }
+
+        .nav-menu .nav-link {
+            padding: 15px 0;
+            color: #333;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-menu .nav-link:hover {
+            color: #d9534f;
+        }
+
+        .nav-menu .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 10px; /* Điều chỉnh vị trí đường gạch chân */
+            width: 0;
+            height: 2px;
+            background-color: #d9534f;
+            transition: width 0.3s ease-out;
+        }
+
+        .nav-menu .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            padding: 20px;
+            border-radius: 5px;
+            min-width: 800px; /* Tăng độ rộng của mega menu */
+            border: none;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .mega-menu {
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+        }
+
+        .mega-menu-column {
+            flex: 1;
+            min-width: 150px;
+        }
+
+        .mega-menu-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .mega-menu-title a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .mega-menu-title a:hover {
+            color: #d9534f;
+        }
+
+        .mega-menu-item {
+            margin-bottom: 5px;
+        }
+
+        .mega-menu-item a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .mega-menu-item a:hover {
+            color: #d9534f;
+        }
+
+        .mega-menu-column img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* CUSTOM STYLES FOR PRODUCT DETAIL SECTION (NEW) */
+        .product-detail-container {
+            margin-top: 150px; /* Adjust based on your header height */
+            padding: 40px 0;
+        }
+
+        .product-info h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        
+        /* Product main info styles */
+        .product-info-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-price-display {
+            font-size: 2.2rem;
+            color: #d9534f; /* A strong red for price */
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+        
+        .original-price-strikethrough {
+            font-size: 1.5rem;
+            color: #888;
+            text-decoration: line-through;
+            font-weight: normal;
+        }
+
+        .savings-info {
+            color: #d9534f;
+            font-size: 0.9rem;
+            margin-top: -5px;
+            margin-bottom: 15px;
+        }
+
+        .product-description-brief {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        /* Promotion section styles */
+        .promotion-box {
+            border: 1px dashed #d9534f;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+
+        .promotion-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .promotion-box ul li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        .promotion-box ul li::before {
+            content: "• ";
+            color: #d9534f;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Discount codes */
+        .discount-codes-new button {
+            background-color: #ffe8ed;
+            color: #d9534f;
+            border: 1px solid #d9534f;
+            padding: 8px 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .discount-codes-new button.selected {
+            background-color: #d9534f;
+            color: #fff;
+        }
+
+        .discount-codes-new button:hover:not(.selected) {
+            background-color: #f7d4db;
+        }
+
+        /* Size options */
+        .size-options-new {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap; /* Cho phép các size xuống dòng trên mobile */
+        }
+
+        .size-option-new {
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+            text-align: center;
+            min-width: 40px;
+            flex-grow: 1; /* Để các ô size tự động giãn ra */
+        }
+
+        .size-option-new.selected {
+            background-color: #d9534f;
+            color: #fff;
+            border-color: #d9534f;
+        }
+
+        .size-option-new.disabled {
+            background-color: #f0f0f0;
+            color: #bbb;
+            cursor: not-allowed;
+            border-color: #eee;
+            opacity: 0.6;
+        }
+
+        /* Quantity selector */
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 150px; /* Fixed width for quantity selector */
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .quantity-selector button {
+            background-color: #f0f0f0;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background-color 0.2s;
+        }
+
+        .quantity-selector button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .quantity-selector input {
+            border: none;
+            text-align: center;
+            width: 100%;
+            padding: 10px 0;
+            font-size: 1rem;
+            -moz-appearance: textfield; /* Hide arrows for Firefox */
+        }
+        .quantity-selector input::-webkit-outer-spin-button,
+        .quantity-selector input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+
+        /* Action buttons */
+        .action-buttons button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s;
+        }
+
+        .add-to-cart-btn {
+            background-color: #f38a9a; /* Màu hồng */
+            color: #fff;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #e27a8b;
+        }
+
+        .buy-now-btn {
+            background-color: #d9534f; /* Màu đỏ */
+            color: #fff;
+        }
+
+        .buy-now-btn:hover {
+            background-color: #c0000d;
+        }
+
+        /* Custom Message Box */
+        .custom-message-box-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 9999;
+            pointer-events: none; /* Cho phép click xuyên qua nếu không có message */
+        }
+
+        .custom-message-box {
+            background-color: #333;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            pointer-events: auto; /* Cho phép tương tác khi hiển thị */
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .custom-message-box.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Product details accordion */
+        .product-details .accordion-item {
+            margin-bottom: 10px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .product-details .accordion-button {
+            font-weight: bold;
+            color: #333;
+            background-color: #f9f9f9;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+        }
+        .product-details .accordion-button:not(.collapsed) {
+            color: #d9534f;
+            background-color: #ffe8ed;
+            box-shadow: inset 0 -1px 0 rgba(0,0,0,.125);
+        }
+        .product-details .accordion-body {
+            padding: 20px;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #555;
+        }
+        .product-details .accordion-body ul {
+            padding-left: 25px;
+            margin-top: 10px;
+        }
+        .product-details .accordion-body ul li {
+            margin-bottom: 5px;
+        }
+
+        .product-details .size-table th,
+        .product-details .size-table td {
+            font-size: 0.9rem;
+        }
+
+        .copy-button {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            cursor: pointer;
+            margin-left: 5px;
+            transition: background-color 0.2s;
+        }
+        .copy-button:hover {
+            background-color: #e0e0e0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="homepage container-fluid">
+        <header class="header container-fluid fixed">
+            <div class="header-top row fixed">
+                <p><b>FREESHIP</b> đơn hàng từ <b>450K</b></p>
+            </div>
+            <div class="header-mid row">
+                <div class="header-mid-content col fixed">
+                    <p><b>FREESHIP</b> đơn hàng từ <b>450K</b></p>
+                </div>
+                <div class="header-mid-brand col">
+                    <h1><a href="index.html">HUIT VUITON</a></h1>
+                </div>
+                <div class="header-mid-contect col">
+                    <p><a href="https://zalo.me/pc">0987 865 123</a><br>Hotline & Zalo</p>
+                    <i class="fas fa-search" id="searchIcon"></i>
+                    <i class="far fa-user" id="userIcon"></i>
+                    <a href="../src/cart.html">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span id="cartQuantity">0</span> <!-- Nơi hiển thị số lượng sản phẩm trong giỏ -->
+                    </a>
+                    <div class="search-bar" id="searchBar">
+                        <div class="search-label">TÌM KIẾM</div>
+                        <div class="search-input-container">
+                            <input type="text" placeholder="Tìm kiếm sản phẩm..." id="searchInput">
+                            <button type="button" id="searchButton"><i class="fas fa-search"></i></button>
+                        </div>
+                    </div>
+                    <div class="login-form" id="loginForm">
+                        <div class="login-label">ĐĂNG NHẬP</div>
+                        <div class="login-input-container">
+                            <input type="text" placeholder="Tên đăng nhập..." id="usernameInput">
+                            <input type="password" placeholder="Mật khẩu..." id="passwordInput">
+                            <div class="text-form">
+                                <p style="font-size: 1rem;">
+                                    This site is protected by reCAPTCHA and the Google <br>
+                                    <a href="#" style="text-decoration: none">Privacy Policy</a> and
+                                    <a href="#" style="text-decoration: none">Terms of Service</a> apply.
+                                </p>
+                            </div>
+                            <button type="button" id="loginButton">Đăng nhập</button>
+                            <div class="text-form">
+                                <p style="font-size: 1rem;">
+                                    Chưa có tài khoản? <a style="color: blue;" href="../src/login.html">Đăng kí</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bot row">
+                <nav class="navbar navbar-expand-lg nav-menu justify-content-center">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">NEW ARRIVALS</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#">
+                                SẢN PHẨM
+                            </a>
+                            <div class="dropdown-menu">
+                                <div class="mega-menu">
+                                    <div class="mega-menu-column">
+                                        <div class="mega-menu-title"><a href="#">ÁO SƠ MI</a></div>
+                                        <div class="mega-menu-item"><a href="#">Áo Sơ Mi Trơn</a></div>
+                                        <div class="mega-menu-item"><a href="#">Áo Sơ Mi Sọc</a></div>
+                                        <div class="mega-menu-item"><a href="#">Áo Sơ Mi Họa Tiết</a></div>
+                                        <div class="mega-menu-item"><a href="#">Áo Sơ Mi Kiểu</a></div>
+                                        <div class="mega-menu-item"><a href="#">Áo Sơ Mi Oversize</a></div>
+                                        <div class="mega-menu-item"><a href="#">Áo Sơ Mi Form Rộng</a></div>
+                                        <div class="mega-menu-item"><a href="#">Áo Sơ Mi Form Suông</a></div>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <div class="mega-menu-title"><a href="#">QUẦN TÂY NỮ</a></div>
+                                        <div class="mega-menu-item"><a href="#">Quần Ông Suông</a></div>
+                                        <div class="mega-menu-item"><a href="#">Quần Ông Rộng</a></div>
+                                        <div class="mega-menu-item"><a href="#">Quần Baggy</a></div>
+                                        <div class="mega-menu-item"><a href="#">Quần Jean</a></div>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <div class="mega-menu-title"><a href="#">CHÂN VÁY</a></div>
+                                        <div class="mega-menu-item"><a href="#">Chân Váy Bút Chì</a></div>
+                                        <div class="mega-menu-item"><a href="#">Chân Váy Chữ A</a></div>
+                                        <div class="mega-menu-item"><a href="#">Chân Váy Đuôi Cá</a></div>
+                                        <div class="mega-menu-item"><a href="#">Chân Váy Xòe</a></div>
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <img src="https://placehold.co/150x200/cccccc/333333?text=Menu+Image+1" alt="Menu Image 1">
+                                    </div>
+                                    <div class="mega-menu-column">
+                                        <img src="https://placehold.co/150x200/cccccc/333333?text=Menu+Image+2" alt="Menu Image 2">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ÁO</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">VÁY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">QUẦN</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="product-detail-container container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Bootstrap Carousel for product images -->
+                    <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Carousel items will be loaded by JS here -->
+                            <div class="carousel-item active">
+                                <img src="https://placehold.co/600x600/cccccc/333333?text=Main+Product+Image" class="d-block w-100" alt="Product Image 1">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                        <div class="carousel-indicators-thumbnails row g-2 mt-2" id="thumbnail-indicators">
+                            <!-- Thumbnails will be loaded by JS here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 product-info">
+                    <div class="product-info-box">
+                        <h1 id="productName">Đầm voan ánh nhún hồng hoa 3D, kiểu cách mới lạ, lên dáng đẹp</h1>
+                        <p class="text-muted">Thương hiệu: NK FASHION - Mã sản phẩm: <span id="product-sku">NKDV2503009</span></p>
+
+                        <div class="product-price-display">
+                            <span id="current-price">465.500</span> VNĐ
+                            <span class="original-price-strikethrough" id="original-price-display">490.000 VNĐ</span>
+                        </div>
+                        <p class="savings-info">(Tiết kiệm: <span id="savings-amount">24.500</span> VNĐ)</p>
+
+                        <hr>
+
+                        <h2 class="section-title">
+                            <span style="color: #d9534f; font-size: 1.2em; vertical-align: middle;">🎁</span>
+                            <span style="vertical-align: middle;">KHUYẾN MÃI - ƯU ĐÃI</span>
+                        </h2>
+                        <div class="promotion-box">
+                            <ul>
+                                <li>Nhập mã <strong id="promo-code-nkf50k">NKF50K</strong> thêm 50k đơn hàng từ 1tr <button class="copy-button" data-copy-target="promo-code-nkf50k">Sao chép</button></li>
+                                <li>Đóng gói Ship toàn quốc 20.000đ</li>
+                                <li>Miễn phí vận chuyển với đơn hàng từ 500k</li>
+                                <li>Kiểm hàng trước khi thanh toán</li>
+                                <li>Đổi hàng trong vòng 7 ngày Miễn phí đổi với sản phẩm lỗi sản xuất.</li>
+                            </ul>
+                        </div>
+
+                        <h2 class="section-title">Mã giảm giá</h2>
+                        <div class="discount-codes-new">
+                            <button class="btn btn-outline-danger" data-code="NKF50K" data-discount="50000">NKF50K</button>
+                            <button class="btn btn-outline-danger" data-code="NKF100K" data-discount="100000">NKF100K</button>
+                            <button class="btn btn-outline-danger" data-code="NKF150K" data-discount="150000">NKF150K</button>
+                        </div>
+
+                        <hr>
+
+                        <h2 class="section-title">SIZE:</h2>
+                        <div class="size-options-new" id="size-options-container">
+                            <!-- Size options will be loaded by JS here -->
+                            <div class="size-option-new" data-size="S">S</div>
+                            <div class="size-option-new" data-size="M">M</div>
+                            <div class="size-option-new" data-size="L">L</div>
+                            <div class="size-option-new" data-size="XL">XL</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="productQuantity" class="form-label section-title" style="margin-bottom: 5px;">Số lượng:</label>
+                            <div class="quantity-selector">
+                                <button id="decrementQuantity">-</button>
+                                <input type="number" id="productQuantity" value="1" min="1" readonly>
+                                <button id="incrementQuantity">+</button>
+                            </div>
+                        </div>
+
+                        <div class="final-price-display mt-4">
+                            Tổng cộng: <span id="final-price-display-value">465.500</span> VNĐ
+                        </div>
+
+                        <div class="action-buttons mt-4">
+                            <button class="btn add-to-cart-btn" id="addToCartBtn">Thêm vào giỏ</button>
+                            <button class="btn buy-now-btn">MUA NGAY</button>
+                        </div>
+
+                        <div class="back-to-shop">
+                            <a href="users.html">Quay lại trang chủ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product details accordion -->
+            <div class="product-details mt-5">
+                <div class="accordion" id="productDetailsAccordion">
+                    <!-- Mô tả sản phẩm -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingDescription">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDescription" aria-expanded="true" aria-controls="collapseDescription">
+                                Mô tả sản phẩm
+                            </button>
+                        </h2>
+                        <div id="collapseDescription" class="accordion-collapse collapse show" aria-labelledby="headingDescription" data-bs-parent="#productDetailsAccordion">
+                            <div class="accordion-body" id="productDescriptionBody">
+                                <!-- Nội dung mô tả sẽ được load bằng JS -->
+                                <p><strong>Chất liệu:</strong> Voan ánh nhún 3D cao cấp, mềm mại, thoáng mát, tạo cảm giác thoải mái khi mặc.</p>
+                                <p><strong>Thiết kế:</strong></p>
+                                <ul>
+                                    <li>Dáng đầm xòe nhẹ nhàng, tôn dáng.</li>
+                                    <li>Điểm nhấn hoa 3D tinh tế, được đính thủ công, tạo vẻ đẹp độc đáo.</li>
+                                    <li>Cổ tròn, tay ngắn hoặc tay lỡ (tùy phiên bản), phù hợp nhiều phong cách.</li>
+                                    <li>Có lớp lót bên trong, không gây khó chịu khi tiếp xúc da.</li>
+                                </ul>
+                                <p><strong>Màu sắc:</strong> Hồng pastel, nhẹ nhàng và nữ tính.</p>
+                                <p><strong>Phù hợp:</strong> Mặc đi làm, đi chơi, dạo phố, dự tiệc nhẹ, hoặc các sự kiện đặc biệt.</p>
+                                <p>Sản phẩm được thiết kế và sản xuất bởi NK FASHION, cam kết chất lượng và kiểu dáng độc quyền.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Đặc điểm nổi bật -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFeatures">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFeatures" aria-expanded="false" aria-controls="collapseFeatures">
+                                Đặc điểm nổi bật
+                            </button>
+                        </h2>
+                        <div id="collapseFeatures" class="accordion-collapse collapse" aria-labelledby="headingFeatures" data-bs-parent="#productDetailsAccordion">
+                            <div class="accordion-body">
+                                <ul id="productFeatures">
+                                    <!-- Các đặc điểm nổi bật sẽ được thêm vào đây bằng JS -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- BẢNG QUY ĐỔI SIZE -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSizeGuide">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSizeGuide" aria-expanded="false" aria-controls="collapseSizeGuide">
+                                BẢNG QUY ĐỔI SIZE
+                            </button>
+                        </h2>
+                        <div id="collapseSizeGuide" class="accordion-collapse collapse" aria-labelledby="headingSizeGuide" data-bs-parent="#productDetailsAccordion">
+                            <div class="accordion-body">
+                                <table class="size-table table table-bordered">
+                                    <thead id="sizeTableHeader">
+                                        <!-- Header bảng size sẽ được thêm vào đây bằng JS -->
+                                    </thead>
+                                    <tbody id="sizeTableBody">
+                                        <!-- Dữ liệu bảng size sẽ được thêm vào đây bằng JS -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HƯỚNG DẪN SỬ DỤNG -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingCare">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCare" aria-expanded="false" aria-controls="collapseCare">
+                                HƯỚNG DẪN SỬ DỤNG
+                            </button>
+                        </h2>
+                        <div id="collapseCare" class="accordion-collapse collapse" aria-labelledby="headingCare" data-bs-parent="#productDetailsAccordion">
+                            <div class="accordion-body">
+                                <ul id="productCareInstructions">
+                                    <!-- Hướng dẫn sử dụng sẽ được thêm vào đây bằng JS -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="policy-links text-center mt-4">
+                    <a href="#" class="btn btn-light me-2">Xem thêm</a>
+                    <a href="#" class="btn btn-light me-2">Chính sách giao hàng</a>
+                    <a href="#" class="btn btn-light">Chính sách đổi trả</a>
+                </div>
+            </div>
+        </section>
+		
+    </div>
+
+    <!-- Custom Message Box Container (sẽ hiển thị thông báo) -->
+    <div class="custom-message-box-container">
+        <div class="custom-message-box" id="customMessageBox"></div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper (đã bao gồm jQuery và Popper cho Bootstrap JS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+
+    <script>
+        // MOCK DATA SẢN PHẨM
+        const productsData = {
+           "1": {
+    "name": "Quần Jean dáng Đứng",
+    "price": "499.000đ",
+    "listedPrice": 550000,
+    "currentSellingPrice": 499000,
+    "description": "Quần jean dáng đứng cổ điển, phù hợp cho mọi vóc dáng. Chất liệu denim cao cấp, bền màu, mang lại sự thoải mái tối đa khi mặc.",
+    "images": [
+      "./asset/img/QuanJeanDangDung.jpg"
+    ],
+    "sizes": ["28", "29", "30", "31", "32"],
+    "features": [
+      "Chất liệu jean cotton 100%, thoáng khí và bền đẹp.",
+      "Thiết kế dáng đứng tạo cảm giác chân dài và thon gọn.",
+      "Dễ dàng phối hợp với áo thun, áo sơ mi cho nhiều dịp."
+    ],
+    "sizeGuide": [
+      { "size": "28", "weight": "45-50 kg", "height": "1m55-1m60", "waist": "72-76 cm", "hip": "90-94 cm" },
+      { "size": "29", "weight": "51-55 kg", "height": "1m60-1m65", "waist": "77-81 cm", "hip": "95-99 cm" },
+      { "size": "30", "weight": "56-60 kg", "height": "1m65-1m70", "waist": "82-86 cm", "hip": "100-104 cm" },
+      { "size": "31", "weight": "61-65 kg", "height": "1m70-1m75", "waist": "87-91 cm", "hip": "105-109 cm" },
+      { "size": "32", "weight": "66-70 kg", "height": "1m75-1m80", "waist": "92-96 cm", "hip": "110-114 cm" }
+    ],
+    "careInstructions": [
+      "Giặt riêng với quần áo màu sáng trong lần giặt đầu tiên.",
+      "Lộn trái sản phẩm khi giặt và phơi.",
+      "Không sử dụng thuốc tẩy mạnh.",
+      "Phơi trong bóng râm, tránh ánh nắng trực tiếp để giữ màu."
+    ]
+  },
+  "2": {
+    "name": "Áo Sơ Mi Sọc Đen",
+    "price": "420.000đ",
+    "listedPrice": 479000,
+    "currentSellingPrice": 420000,
+    "description": "Áo sơ mi sọc đen cá tính – lựa chọn hoàn hảo cho phong cách thanh lịch pha chút nổi bật. Thiết kế unisex dễ phối, làm bừng sáng mọi outfit của bạn.",
+    "images": [
+      "./asset/img/AoSoMiSocDen.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Chất liệu vải cotton mềm mại, thấm hút tốt.",
+      "Sọc đen tinh tế, phù hợp đi học, đi làm hay dạo phố.",
+      "Form rộng thoải mái, dễ phối cùng quần jean, short hoặc chân váy."
+    ],
+    "sizeGuide": [
+      { "size": "S", "weight": "45-52 kg", "height": "1m50-1m60", "chest": "80-86 cm" },
+      { "size": "M", "weight": "53-59 kg", "height": "1m60-1m68", "chest": "87-93 cm" },
+      { "size": "L", "weight": "60-66 kg", "height": "1m68-1m75", "chest": "94-100 cm" },
+      { "size": "XL", "weight": "67-73 kg", "height": "1m75-1m80", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ ở nhiệt độ dưới 30°C.",
+      "Ủi ở nhiệt độ trung bình.",
+      "Tránh giặt chung với quần áo có màu đậm."
+    ]
+  },
+  "3": {
+    "name": "Áo Sơ Mi Trơn",
+    "price": "390.000đ",
+    "listedPrice": 450000,
+    "currentSellingPrice": 390000,
+    "description": "Tối giản nhưng không hề đơn điệu, áo sơ mi trơn mang đến sự thanh lịch cho mọi phong cách. Hãy để bản thân trở thành tâm điểm với nét đẹp tinh tế này!",
+    "images": [
+      "./asset/img/AoSoMiTron.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Chất vải cotton pha poly mềm mịn.",
+      "Form dáng basic, dễ phối layer hoặc mặc đơn.",
+      "Màu sắc trung tính phù hợp cả nam và nữ."
+    ],
+    "sizeGuide": [
+      { "size": "S", "weight": "45-52 kg", "height": "1m50-1m60", "chest": "80-86 cm" },
+      { "size": "M", "weight": "53-59 kg", "height": "1m60-1m68", "chest": "87-93 cm" },
+      { "size": "L", "weight": "60-66 kg", "height": "1m68-1m75", "chest": "94-100 cm" },
+      { "size": "XL", "weight": "67-73 kg", "height": "1m75-1m80", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Không giặt với nước nóng.",
+      "Tránh ngâm sản phẩm quá lâu.",
+      "Sấy ở chế độ nhẹ hoặc phơi tự nhiên."
+    ]
+  },
+  "4": {
+    "name": "Sơ Mi Hồng Classic",
+    "price": "470.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 470000,
+    "description": "Gây ấn tượng với sắc hồng nhẹ nhàng, áo sơ mi Classic là điểm nhấn cho những ngày cần sự tự tin, trẻ trung và tràn đầy năng lượng.",
+    "images": [
+      "./asset/img/AoSoMiClassic.jpg"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Tông hồng pastel trẻ trung, tôn da.",
+      "Chất vải mát, mịn, không nhăn.",
+      "Form suông nhẹ, ôm dáng vừa vặn."
+    ],
+    "sizeGuide": [
+      { "size": "S", "weight": "40-47 kg", "height": "1m50-1m58", "chest": "78-85 cm" },
+      { "size": "M", "weight": "48-54 kg", "height": "1m58-1m65", "chest": "86-92 cm" },
+      { "size": "L", "weight": "55-60 kg", "height": "1m65-1m72", "chest": "93-98 cm" }
+    ],
+    "careInstructions": [
+      "Giặt bằng tay để tránh xù lông.",
+      "Phơi nơi thoáng mát, tránh ánh nắng gắt.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  },
+  "5": {
+    "name": "Thun Nâu Cổ Điển",
+    "price": "350.000đ",
+    "listedPrice": 400000,
+    "currentSellingPrice": 350000,
+    "description": "Đơn giản nhưng tinh tế, áo thun nâu cổ điển là lựa chọn hoàn hảo cho những ai yêu thích sự nhẹ nhàng và ấm áp trong từng khoảnh khắc.",
+    "images": [
+      "./asset/img/AoThunNganPolo.webp"
+    ],
+    "sizes": ["M", "L", "XL"],
+    "features": [
+      "Chất liệu cotton 4 chiều, co giãn thoải mái.",
+      "Màu nâu dễ phối, phù hợp nhiều phong cách.",
+      "Đường may chắc chắn, bền đẹp lâu dài."
+    ],
+    "sizeGuide": [
+      { "size": "M", "weight": "50-58 kg", "height": "1m55-1m68", "chest": "87-93 cm" },
+      { "size": "L", "weight": "59-66 kg", "height": "1m68-1m75", "chest": "94-100 cm" },
+      { "size": "XL", "weight": "67-75 kg", "height": "1m75-1m82", "chest": "101-108 cm" }
+    ],
+    "careInstructions": [
+      "Lộn trái khi giặt và phơi.",
+      "Không dùng bàn chải cứng để chà lên áo.",
+      "Tránh sấy nhiệt cao."
+    ]
+  },
+  "6": {
+    "name": "Váy Suông Âu",
+    "price": "520.000đ",
+    "listedPrice": 580000,
+    "currentSellingPrice": 520000,
+    "description": "Váy suông kiểu Âu – thanh lịch, sang trọng và tinh tế giúp nàng tự tin trong mọi sự kiện. Đường cắt may tỉ mỉ tôn dáng hoàn hảo.",
+    "images": [
+      "./asset/img/chanvay.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Form suông hiện đại, che khuyết điểm tối ưu.",
+      "Chất liệu vải nhập khẩu, mềm mại, mát mẻ.",
+      "Dễ phối cùng giày cao gót hoặc sneaker."
+    ],
+    "sizeGuide": [
+      { "size": "S", "weight": "40-46 kg", "height": "1m50-1m57", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "weight": "47-53 kg", "height": "1m57-1m64", "waist": "66-70 cm", "hip": "90-94 cm" },
+      { "size": "L", "weight": "54-60 kg", "height": "1m64-1m70", "waist": "71-75 cm", "hip": "95-99 cm" },
+      { "size": "XL", "weight": "61-68 kg", "height": "1m70-1m76", "waist": "76-80 cm", "hip": "100-104 cm" }
+    ],
+    "careInstructions": [
+      "Không sử dụng thuốc tẩy.",
+      "Giặt nhẹ nhàng, tránh vắt mạnh.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  } ,
+         
+		  "V0090": {
+    "name": "Chân Váy Ngắn Xòe 2 Tầng",
+    "price": "480.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 480000,
+    "description": "Chân váy ngắn xòe hai tầng trẻ trung, bồng bềnh như làn gió mùa hè. Một item không thể thiếu cho những buổi dạo phố cùng bạn bè, giúp bạn luôn nổi bật và duyên dáng.",
+    "images": [
+      "./asset/img/ChanVayXoe2Tang.jpg"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Thiết kế hai tầng bồng bềnh, tạo hiệu ứng thon gọn đôi chân.",
+      "Chất vải lụa nhập cao cấp, mát mẻ, mềm mại.",
+      "Dễ phối với áo thun, sơ mi hoặc croptop."
+    ],
+    "sizeGuide": [
+      {"size": "S", "waist": "60-65 cm", "hip": "85-89 cm"},
+      {"size": "M", "waist": "65-70 cm", "hip": "90-94 cm"},
+      {"size": "L", "waist": "71-76 cm", "hip": "95-100 cm"}
+    ],
+    "careInstructions": [
+      "Giặt bằng tay với nước lạnh.",
+      "Tránh vắt mạnh để giữ form váy.",
+      "Ủi ở nhiệt độ thấp, tránh tiếp xúc trực tiếp với mặt vải."
+    ]
+  },
+  "S0009": {
+    "name": "Áo sơ mi Oversize Khoát ngoài",
+    "price": "400.000đ",
+    "listedPrice": 450000,
+    "currentSellingPrice": 400000,
+    "description": "Áo sơ mi oversize khoác ngoài – giải pháp hoàn hảo cho phong cách layering năng động. Chỉ cần khoác nhẹ, bạn đã sẵn sàng cho những trải nghiệm đầy cá tính.",
+    "images": [
+      "./asset/img/SoMiOverSizeCoDuoi.webp",
+      "./asset/img/SoMiOverSizeCoDuoi_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Form oversize thời thượng, thoải mái vận động.",
+      "Chất liệu cotton pha linen thoáng mát.",
+      "Phối được với nhiều kiểu áo bên trong."
+    ],
+    "sizeGuide": [
+      {"size": "S", "chest": "84-88 cm", "length": "65 cm"},
+      {"size": "M", "chest": "89-95 cm", "length": "67 cm"},
+      {"size": "L", "chest": "96-102 cm", "length": "69 cm"},
+      {"size": "XL", "chest": "103-108 cm", "length": "71 cm"}
+    ],
+    "careInstructions": [
+      "Giặt máy chế độ nhẹ.",
+      "Không dùng thuốc tẩy.",
+      "Phơi ngang, tránh nắng gắt để giữ màu áo."
+    ]
+  },
+  "S9077": {
+    "name": "Áo sơ mi tay suông trẻ trung 7",
+    "price": "510.000đ",
+    "listedPrice": 570000,
+    "currentSellingPrice": 510000,
+    "description": "Áo sơ mi tay suông trẻ trung - lựa chọn tinh tế cho những cô nàng hiện đại. Đơn giản nhưng vẫn cuốn hút, thích hợp cho cả môi trường công sở lẫn gặp gỡ bạn bè.",
+    "images": [
+      "./asset/img/SoMiSuongTayDai_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Tay suông thoải mái, không gò bó.",
+      "Màu sắc trẻ trung, dễ phối đồ.",
+      "Đường may tinh xảo, bền đẹp theo thời gian."
+    ],
+    "sizeGuide": [
+      {"size": "S", "chest": "80-86 cm"},
+      {"size": "M", "chest": "87-93 cm"},
+      {"size": "L", "chest": "94-100 cm"}
+    ],
+    "careInstructions": [
+      "Giặt nhẹ, tránh chà xát mạnh.",
+      "Không ngâm lâu với nước xà phòng.",
+      "Ủi ở nhiệt độ trung bình."
+    ]
+  },
+  "S6574": {
+    "name": "Sơ mi tay ngắn thanh lịch",
+    "price": "480.000đ",
+    "listedPrice": 530000,
+    "currentSellingPrice": 480000,
+    "description": "Nét thanh lịch trong từng đường kim mũi chỉ, áo sơ mi tay ngắn thích hợp cho những ngày hè năng động. Vừa trẻ trung vừa lịch sự, phù hợp mọi hoàn cảnh.",
+    "images": [
+      "./asset/img/SoMiSuongTayNgan.png",
+      "./asset/img/SoMiSuongTayNgan_hover.png"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Tay ngắn mát mẻ, phù hợp thời tiết nóng.",
+      "Form slim giúp tôn dáng.",
+      "Vải cao cấp, không nhăn dễ bảo quản."
+    ],
+    "sizeGuide": [
+      {"size": "S", "chest": "80-86 cm"},
+      {"size": "M", "chest": "87-93 cm"},
+      {"size": "L", "chest": "94-100 cm"},
+      {"size": "XL", "chest": "101-107 cm"}
+    ],
+    "careInstructions": [
+      "Giặt máy ở chế độ nhẹ.",
+      "Không sử dụng chất tẩy mạnh.",
+      "Phơi nơi thoáng mát, tránh ánh nắng trực tiếp."
+    ]
+  },
+  "S2314": {
+    "name": "Áo sơ mi Oversize hở cổ",
+    "price": "429.000đ",
+    "listedPrice": 480000,
+    "currentSellingPrice": 429000,
+    "description": "Cá tính và quyến rũ, áo sơ mi oversize hở cổ là điểm nhấn sành điệu cho mọi set đồ. Tự tin thể hiện phong cách với thiết kế phá cách này!",
+    "images": [
+      "./asset/img/SoMiOverSizeHoCo.jpg",
+      "./asset/img/SoMiOverSizeHoCo_Hover.jpg"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Cổ áo hở nhẹ, tạo vẻ đẹp phóng khoáng.",
+      "Form rộng giúp che khuyết điểm tốt.",
+      "Chất liệu mềm mại, mát mẻ."
+    ],
+    "sizeGuide": [
+      {"size": "S", "chest": "84-88 cm"},
+      {"size": "M", "chest": "89-94 cm"},
+      {"size": "L", "chest": "95-100 cm"}
+    ],
+    "careInstructions": [
+      "Giặt riêng lần đầu với sản phẩm sáng màu.",
+      "Ủi nhẹ ở mặt trái áo.",
+      "Không vắt mạnh làm giãn form áo."
+    ]
+  },
+  "S7869": {
+    "name": "Áo sơ Mi Sọc Tù Ngang",
+    "price": "529.000đ",
+    "listedPrice": 579000,
+    "currentSellingPrice": 529000,
+    "description": "Phá cách với họa tiết sọc tù ngang, chiếc áo sơ mi này mang lại cảm giác mới mẻ và năng động, thích hợp cho những bạn trẻ yêu thích sự đổi mới.",
+    "images": [
+      "./asset/img/SoMiSoTuNgang.webp",
+      "./asset/img/SoMiSoTuNgang_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Họa tiết sọc ngang cá tính.",
+      "Chất vải mềm, thấm hút mồ hôi tốt.",
+      "Dễ phối với quần jean, short hoặc chân váy."
+    ],
+    "sizeGuide": [
+      {"size": "S", "chest": "80-86 cm"},
+      {"size": "M", "chest": "87-93 cm"},
+      {"size": "L", "chest": "94-100 cm"},
+      {"size": "XL", "chest": "101-107 cm"}
+    ],
+    "careInstructions": [
+      "Giặt máy ở chế độ nhẹ.",
+      "Không dùng thuốc tẩy.",
+      "Phơi ngang giữ form áo."
+    ]
+  },
+  "S1234": {
+    "name": "Áo Sơ Mi Phối Classic",
+    "price": "479.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 479000,
+    "description": "Sự kết hợp hoàn hảo giữa truyền thống và hiện đại, áo sơ mi phối Classic giúp bạn nổi bật trong mọi hoàn cảnh, từ công sở đến dạo phố.",
+    "images": [
+      "./asset/img/AoSoMiClassic.jpg",
+      "./asset/img/AoSoMiClassic_hover.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Phối màu sang trọng, tinh tế.",
+      "Chất liệu cao cấp, bền màu.",
+      "Form chuẩn, tôn dáng người mặc."
+    ],
+    "sizeGuide": [
+      {"size": "S", "chest": "80-86 cm"},
+      {"size": "M", "chest": "87-93 cm"},
+      {"size": "L", "chest": "94-100 cm"},
+      {"size": "XL", "chest": "101-107 cm"}
+    ],
+    "careInstructions": [
+      "Giặt máy ở chế độ nhẹ.",
+      "Tránh ngâm lâu với nước xà phòng.",
+      "Phơi nơi râm mát."
+    ]
+  },
+  "s9901": {
+    "name": "Quần Jean Xanh Dáng Đứng",
+    "price": "595.000đ",
+    "listedPrice": 650000,
+    "currentSellingPrice": 595000,
+    "description": "Quần jean xanh dáng đứng, biểu tượng của sự trẻ trung và năng động. Sản phẩm giúp bạn tự tin sải bước mỗi ngày, không lo lỗi mốt.",
+    "images": [
+      "./asset/img/QuanJeanDangDung.jpg",
+      "./asset/img/QuanJeanDangDung_hover.webp"
+    ],
+    "sizes": ["28", "29", "30", "31", "32", "33"],
+    "features": [
+      "Chất jean dày dặn, co giãn nhẹ.",
+      "Màu xanh trẻ trung, dễ phối.",
+      "Thiết kế dáng đứng tôn dáng chân."
+    ],
+    "sizeGuide": [
+      {"size": "28", "waist": "72-76 cm", "hip": "90-94 cm"},
+      {"size": "29", "waist": "77-81 cm", "hip": "95-99 cm"},
+      {"size": "30", "waist": "82-86 cm", "hip": "100-104 cm"},
+      {"size": "31", "waist": "87-91 cm", "hip": "105-109 cm"},
+      {"size": "32", "waist": "92-96 cm", "hip": "110-114 cm"},
+      {"size": "33", "waist": "97-101 cm", "hip": "115-119 cm"}
+    ],
+    "careInstructions": [
+      "Giặt riêng với sản phẩm sáng màu.",
+      "Lộn trái khi phơi để giữ màu.",
+      "Không dùng thuốc tẩy mạnh."
+    ]
+  },
+      "A6754": {
+    "name": "Áo Sơ Mi Tay Dài",
+    "price": "450.000đ",
+    "listedPrice": 499000,
+    "currentSellingPrice": 450000,
+    "description": "Áo sơ mi tay dài với phong cách thanh lịch, cổ điển. Mang lại cảm giác chỉn chu nhưng vẫn trẻ trung cho cả ngày làm việc hay đi chơi.",
+    "images": [
+      "./asset/img/SoMiSuongTayDai_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Tay dài thanh lịch, phù hợp nhiều hoàn cảnh.",
+      "Chất liệu vải mềm mại, không nhăn, dễ chăm sóc.",
+      "Dễ phối cùng quần âu, jean hoặc chân váy."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ hoặc giặt tay.",
+      "Không dùng thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ thấp để giữ nếp."
+    ]
+  },
+  "V3473": {
+    "name": "Chân Váy Xòe Dáng Dài",
+    "price": "520.000đ",
+    "listedPrice": 570000,
+    "currentSellingPrice": 520000,
+    "description": "Chân váy xòe dáng dài dịu dàng, phù hợp cho nàng yêu thích sự thanh lịch và nữ tính. Thiết kế tôn dáng giúp bạn tự tin trong mọi hoạt động.",
+    "images": [
+      "./asset/img/ChanVayXeoDangDai.jpg",
+      "./asset/img/ChanVayXeoDangDai_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Dáng váy dài tôn chiều cao, che khuyết điểm tốt.",
+      "Chất vải cao cấp, mát mẻ, nhẹ nhàng.",
+      "Thiết kế xòe nhẹ, phù hợp đi chơi, đi làm hoặc dạo phố."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "waist": "65-70 cm", "hip": "90-94 cm" },
+      { "size": "L", "waist": "71-76 cm", "hip": "95-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ với nước lạnh.",
+      "Tránh vắt xoắn mạnh giữ dáng váy.",
+      "Ủi ở nhiệt độ thấp, phơi ở nơi râm mát."
+    ]
+  },
+  "F9867": {
+    "name": "Áo Sơ Mi Sọc Oversize",
+    "price": "499.000đ",
+    "listedPrice": 550000,
+    "currentSellingPrice": 499000,
+    "description": "Áo sơ mi sọc oversize cá tính – lựa chọn hoàn hảo cho phong cách trẻ trung. Phối hợp dễ dàng với mọi loại quần hoặc chân váy.",
+    "images": [
+      "./asset/img/AoSoMiSocDen.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Họa tiết sọc đen trắng hiện đại.",
+      "Form oversize thoải mái, phù hợp nhiều dáng người.",
+      "Chất vải mềm, dễ chăm sóc và không nhăn."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt riêng lần đầu để tránh phai màu.",
+      "Không dùng thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ vừa phải."
+    ]
+  },
+  "Q8654": {
+    "name": "Quần Jean Lửng",
+    "price": "550.000đ",
+    "listedPrice": 600000,
+    "currentSellingPrice": 550000,
+    "description": "Quần jean lửng trẻ trung, cá tính với độ dài vừa phải, tôn lên vẻ năng động cho người mặc. Dễ phối với nhiều kiểu áo, phù hợp cho cả đi làm lẫn đi chơi.",
+    "images": [
+      "./asset/img/QuanJeanLung.webp",
+      "./asset/img/QuanJeanLung_hover.webp"
+    ],
+    "sizes": ["28", "29", "30", "31", "32", "33"],
+    "features": [
+      "Chất jean cao cấp, co giãn nhẹ.",
+      "Dáng lửng hiện đại, trẻ trung.",
+      "Phù hợp nhiều dáng người."
+    ],
+    "sizeGuide": [
+      { "size": "28", "waist": "72-76 cm", "hip": "90-94 cm" },
+      { "size": "29", "waist": "77-81 cm", "hip": "95-99 cm" },
+      { "size": "30", "waist": "82-86 cm", "hip": "100-104 cm" },
+      { "size": "31", "waist": "87-91 cm", "hip": "105-109 cm" },
+      { "size": "32", "waist": "92-96 cm", "hip": "110-114 cm" },
+      { "size": "33", "waist": "97-101 cm", "hip": "115-119 cm" }
+    ],
+    "careInstructions": [
+      "Giặt riêng với sản phẩm sáng màu lần đầu.",
+      "Lộn trái khi phơi giữ màu đẹp.",
+      "Không dùng thuốc tẩy mạnh."
+    ]
+  },
+  "A9788": {
+    "name": "Áo Sơ Mi Trơn",
+    "price": "470.000đ",
+    "listedPrice": 499000,
+    "currentSellingPrice": 470000,
+    "description": "Áo sơ mi trơn tối giản, phù hợp cho những ngày cần sự chỉn chu nhưng vẫn giữ nét trẻ trung, hiện đại.",
+    "images": [
+      "./asset/img/AoSoMiTron.webp",
+      "./asset/img/AoSoMiTron_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Chất vải mềm mại, mát mẻ.",
+      "Form suông dễ mặc, phù hợp nhiều dáng người.",
+      "Màu sắc trung tính dễ phối đồ."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ với nước lạnh.",
+      "Không ngâm quá lâu trong nước xà phòng.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  },
+  "A3452": {
+    "name": "Áo Sơ Mi Sọc",
+    "price": "490.000đ",
+    "listedPrice": 540000,
+    "currentSellingPrice": 490000,
+    "description": "Áo sơ mi sọc thanh lịch, trẻ trung, dễ phối với mọi loại quần hoặc chân váy. Phù hợp nhiều dịp từ công sở đến dạo phố.",
+    "images": [
+      "./asset/img/ChanVayXoe2Tang.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Họa tiết sọc nổi bật, cuốn hút.",
+      "Chất liệu vải mềm, thoáng mát.",
+      "Form dáng hiện đại."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy ở chế độ nhẹ.",
+      "Không dùng thuốc tẩy mạnh.",
+      "Phơi nơi râm mát giữ màu lâu bền."
+    ]
+  },
+  "Q9860": {
+    "name": "Quần Jean Rộng",
+    "price": "580.000đ",
+    "listedPrice": 640000,
+    "currentSellingPrice": 580000,
+    "description": "Quần jean ống rộng cá tính, thoải mái vận động, hợp trend cho các bạn trẻ yêu phong cách tự do, năng động.",
+    "images": [
+      "./asset/img/QuanJeanRong.jpg",
+      "./asset/img/QuanJeanRong_hover.webp"
+    ],
+    "sizes": ["28", "29", "30", "31", "32", "33"],
+    "features": [
+      "Ống rộng trendy, dễ phối nhiều kiểu áo.",
+      "Chất jean bền, không phai màu.",
+      "Co giãn nhẹ, thoải mái hoạt động."
+    ],
+    "sizeGuide": [
+      { "size": "28", "waist": "72-76 cm", "hip": "90-94 cm" },
+      { "size": "29", "waist": "77-81 cm", "hip": "95-99 cm" },
+      { "size": "30", "waist": "82-86 cm", "hip": "100-104 cm" },
+      { "size": "31", "waist": "87-91 cm", "hip": "105-109 cm" },
+      { "size": "32", "waist": "92-96 cm", "hip": "110-114 cm" },
+      { "size": "33", "waist": "97-101 cm", "hip": "115-119 cm" }
+    ],
+    "careInstructions": [
+      "Giặt riêng với sản phẩm sáng màu.",
+      "Không dùng thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ thấp giữ dáng quần."
+    ]
+  },
+  "V7684": {
+    "name": "Chân Váy Bút Chì",
+    "price": "460.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 460000,
+    "description": "Chân váy bút chì tôn dáng, sang trọng, giúp bạn ghi điểm trong mắt đồng nghiệp, đối tác hay bạn bè.",
+    "images": [
+      "./asset/img/VayButChi.jpg",
+      "./asset/img/ChanVayBuiChi_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Dáng bút chì ôm sát, khoe đường cong nhẹ nhàng.",
+      "Chất vải dày dặn, đứng form.",
+      "Phù hợp đi làm, dự tiệc hoặc dạo phố."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "waist": "65-70 cm", "hip": "90-94 cm" },
+      { "size": "L", "waist": "71-76 cm", "hip": "95-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt tay hoặc giặt máy nhẹ.",
+      "Không vắt mạnh giữ dáng váy.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  },
+"A9865": {
+    "name": "Áo Sơ Mi Oversize",
+    "price": "510.000đ",
+    "listedPrice": 570000,
+    "currentSellingPrice": 510000,
+    "description": "Mang hơi thở hiện đại, áo sơ mi oversize giúp bạn phá bỏ mọi giới hạn về phong cách. Hợp xu hướng, hợp mọi hoàn cảnh!",
+    "images": [
+      "./asset/img/SoMiOverSizeHoCo.jpg",
+      "./asset/img/SoMiOverSizeHoCo_Hover.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Form oversize thoải mái, cực dễ phối đồ.",
+      "Chất vải mềm mại, mát mẻ.",
+      "Tôn lên cá tính và gu thời trang riêng."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ, tránh thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ vừa phải.",
+      "Phơi nơi râm mát giữ màu áo lâu bền."
+    ]
+  },
+  "A5738": {
+    "name": "Áo Thun Polo",
+    "price": "440.000đ",
+    "listedPrice": 480000,
+    "currentSellingPrice": 440000,
+    "description": "Áo thun Polo cổ cao – lựa chọn hoàn hảo cho những ai yêu sự năng động, trẻ trung nhưng không kém phần lịch lãm.",
+    "images": [
+      "./asset/img/AoThunPoloCoCao.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Cổ cao thời thượng, tăng nét nam tính.",
+      "Chất liệu thun co giãn, thấm hút tốt.",
+      "Dễ phối cùng quần jeans, kaki hoặc short."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Lộn trái khi giặt và phơi.",
+      "Tránh sấy nhiệt độ cao.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  },
+  "A5763": {
+    "name": "Áo sơ mi Classic",
+    "price": "470.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 470000,
+    "description": "Sơ mi Classic – thanh lịch, đơn giản nhưng luôn nổi bật. Sự lựa chọn dành cho những tín đồ thời trang yêu thích sự tối giản.",
+    "images": [
+      "./asset/img/AoSoMiClassic.jpg",
+      "./asset/img/AoSoMiClassic_hover.jpg"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Form cổ điển, dễ mặc trong mọi dịp.",
+      "Chất vải mịn, không nhăn.",
+      "Màu sắc nhã nhặn, dễ phối đồ."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt tay hoặc giặt máy nhẹ.",
+      "Không dùng thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  },
+  "V6875": {
+    "name": "Chân Váy Chữ A có túi trước",
+    "price": "470.000đ",
+    "listedPrice": 540000,
+    "currentSellingPrice": 470000,
+    "description": "Chân váy chữ A có túi trước – thiết kế trẻ trung, tiện dụng giúp bạn tự tin vận động mà vẫn giữ được nét nữ tính dịu dàng.",
+    "images": [
+      "./asset/img/VayChuACoTuiTruoc.webp",
+      "./asset/img/VayChuACoTuiTruoc_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Dáng chữ A tôn chân dài, năng động.",
+      "Có túi trước tiện dụng để đựng đồ nhỏ.",
+      "Chất vải mềm, thoáng mát."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "waist": "65-70 cm", "hip": "90-94 cm" },
+      { "size": "L", "waist": "71-76 cm", "hip": "95-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ bằng tay hoặc máy.",
+      "Ủi ở nhiệt độ thấp.",
+      "Phơi nơi râm mát giữ màu sắc."
+    ]
+  },
+  "A8678": {
+    "name": "Áo Sơ Mi Kiểu Cổ Rủ",
+    "price": "490.000đ",
+    "listedPrice": 540000,
+    "currentSellingPrice": 490000,
+    "description": "Áo sơ mi kiểu cổ rủ – phá cách, quyến rũ dành cho nàng cá tính. Đường cắt lạ mắt giúp bạn luôn nổi bật giữa đám đông.",
+    "images": [
+      "./asset/img/AoKieuCoRu.webp",
+      "./asset/img/AoKieuCoRu_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Cổ rủ mềm mại, tôn nét nữ tính.",
+      "Form dáng trẻ trung, hợp xu hướng.",
+      "Chất vải mát, không nhăn."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy ở chế độ nhẹ.",
+      "Không dùng thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  },
+  "A9999": {
+    "name": "Áo Sơ Mi Họa Tiết Hoa",
+    "price": "530.000đ",
+    "listedPrice": 590000,
+    "currentSellingPrice": 530000,
+    "description": "Áo sơ mi họa tiết hoa – dịu dàng mà nổi bật, mang đến nét đẹp tươi mới cho mọi ngày của bạn.",
+    "images": [
+      "./asset/img/AoHoaTietHoa.webp",
+      "./asset/img/AoHoaTietHoa_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Họa tiết hoa rực rỡ, trẻ trung.",
+      "Chất vải mềm mại, thoáng khí.",
+      "Phù hợp cả đi làm lẫn dạo phố."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ, tránh thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ vừa phải.",
+      "Phơi nơi râm mát."
+    ]
+  },
+  "Q7875": {
+    "name": "Quần Tây Rộng Nâu",
+    "price": "560.000đ",
+    "listedPrice": 620000,
+    "currentSellingPrice": 560000,
+    "description": "Quần tây rộng nâu – bí quyết hack chiều cao, che khuyết điểm cực đỉnh. Phù hợp cả đi làm, đi chơi hay dự tiệc.",
+    "images": [
+      "./asset/img/QuanTayRongNau.jpg",
+      "./asset/img/QuanTayRongNau_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Ống rộng thoải mái, hợp trend.",
+      "Màu nâu thanh lịch, dễ phối áo.",
+      "Chất vải đứng form, không nhăn."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "66-70 cm", "hip": "90-94 cm" },
+      { "size": "M", "waist": "71-76 cm", "hip": "95-100 cm" },
+      { "size": "L", "waist": "77-81 cm", "hip": "101-105 cm" },
+      { "size": "XL", "waist": "82-86 cm", "hip": "106-110 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ hoặc giặt tay.",
+      "Ủi ở nhiệt độ vừa phải.",
+      "Phơi nơi râm mát."
+    ]
+  },
+  "V0000": {
+    "name": "Chân Váy Đuôi Cá Lụa",
+    "price": "500.000đ",
+    "listedPrice": 570000,
+    "currentSellingPrice": 500000,
+    "description": "Chân váy đuôi cá lụa – mềm mại, uyển chuyển trong từng bước đi. Sản phẩm giúp bạn tỏa sáng với phong thái kiêu sa, nữ tính.",
+    "images": [
+      "./asset/img/VayDuoiCaLua.webp",
+      "./asset/img/VayDuoiCaLua_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Dáng đuôi cá ôm eo, tôn dáng.",
+      "Chất lụa cao cấp, mát mịn.",
+      "Di chuyển nhẹ nhàng, uyển chuyển."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "waist": "65-70 cm", "hip": "90-94 cm" },
+      { "size": "L", "waist": "71-76 cm", "hip": "95-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt bằng tay, không vắt mạnh.",
+      "Ủi ở nhiệt độ thấp.",
+      "Phơi nơi râm mát, tránh nắng gắt."
+    ]   // Thêm các sản phẩm khác vào đây tương tự
+	  
+  },
+			"FAS356": {
+    "name": "Áo Sơ Mi Tay Ngắn+Túi",
+    "price": "450.000đ",
+    "listedPrice": 499000,
+    "currentSellingPrice": 450000,
+    "description": "Muốn vừa mát mẻ vừa tiện lợi? Áo sơ mi tay ngắn có túi chính là lựa chọn “chill” cho những ngày nắng đẹp. Đừng quên bỏ điện thoại vào túi và đi “quẩy” cùng nhóm bạn nhé!",
+    "images": [
+      "./asset/img/AoSoMiNgan_Tui.webp",
+      "./asset/img/AoSoMiNgan_Tui_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Túi siêu to, chứa cả bầu trời nắng hè!",
+      "Thiết kế trẻ trung, năng động, diện lên là auto tươi.",
+      "Vải mềm, thoáng khí, mặc vào là thích mê ngay."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt tay hoặc máy đều ok, đừng vắt mạnh kẻo túi buồn!",
+      "Ủi nhẹ nhàng để áo luôn phẳng phiu.",
+      "Phơi nơi có gió, áo sẽ thơm như mùi nắng!"
+    ]
+  },
+  "S0109": {
+    "name": "Áo sơ mi Oversize Khoát ngoài",
+    "price": "400.000đ",
+    "listedPrice": 450000,
+    "currentSellingPrice": 400000,
+    "description": "Mặc áo này lên là “auto” cá tính! Áo sơ mi oversize khoác ngoài, chuẩn gu người trẻ, đi đâu cũng thấy nổi bật. Đừng ngại layer với áo thun để style thêm chất nhé!",
+    "images": [
+      "./asset/img/SoMiOverSizeCoDuoi.webp",
+      "./asset/img/SoMiOverSizeCoDuoi_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Form rộng cực cool, che nắng che mưa đều xịn.",
+      "Chất vải mát lạnh, lướt nhẹ qua mọi ngày hè.",
+      "Layer kiểu gì cũng chất, mix quần short hay jean đều hợp."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "84-88 cm" },
+      { "size": "M", "chest": "89-95 cm" },
+      { "size": "L", "chest": "96-102 cm" },
+      { "size": "XL", "chest": "103-108 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ nhàng, đừng để áo “hờn”.",
+      "Ủi ở nhiệt độ vừa phải, áo sẽ cảm ơn bạn!",
+      "Đừng quên phơi nơi có nắng nhé, áo thích vitamin D lắm!"
+    ]
+  },
+  "S9077": {
+    "name": "Áo sơ mi tay suông trẻ trung",
+    "price": "510.000đ",
+    "listedPrice": 570000,
+    "currentSellingPrice": 510000,
+    "description": "Đã đến lúc vẫy tay tạm biệt những chiếc áo boring! Sắm ngay áo sơ mi tay suông, trẻ trung, năng động, mặc là thấy yêu đời ngay. Cẩn thận, mặc vào dễ bị “khen” lắm đó!",
+    "images": [
+      "./asset/img/SoMiSuongTayDai_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Tay suông rộng, vẫy gọi tự do!",
+      "Không kén dáng, ai mặc cũng đẹp.",
+      "Phối cùng quần jean hay váy đều “okela”."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ, tránh vặn xoắn, áo thích được nâng niu mà!",
+      "Ủi khi áo còn hơi ẩm, phẳng lì luôn.",
+      "Đừng để áo buồn nằm lâu trong máy giặt nhé!"
+    ]
+  },
+  
+  "S2314": {
+    "name": "Áo sơ mi Oversize hở cổ",
+    "price": "429.000đ",
+    "listedPrice": 480000,
+    "currentSellingPrice": 429000,
+    "description": "Bạn đang muốn “đổi gió” cho tủ đồ? Áo sơ mi oversize hở cổ là lựa chọn không thể bỏ qua! Nhìn là muốn thử, mặc là ghiền, ai cũng phải ngoái nhìn.",
+    "images": [
+      "./asset/img/SoMiOverSizeHoCo.jpg",
+      "./asset/img/SoMiOverSizeHoCo_Hover.jpg"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Cổ áo hở nhẹ, khoe khéo cá tính.",
+      "Form rộng, hợp mọi phong cách.",
+      "Chất vải mềm, mát lạnh, mặc là phê!"
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "84-88 cm" },
+      { "size": "M", "chest": "89-94 cm" },
+      { "size": "L", "chest": "95-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ, phơi chỗ gió cho áo “bay bổng”.",
+      "Ủi nhẹ nhàng, đừng làm áo “nóng giận”.",
+      "Cất áo vào tủ, nhớ đừng để áo cô đơn lâu nhé!"
+    ]
+  },
+  "S7869": {
+    "name": "Áo sơ Mi Sọc Tù Ngang",
+    "price": "529.000đ",
+    "listedPrice": 579000,
+    "currentSellingPrice": 529000,
+    "description": "Sọc tù ngang – mặc là kéo mood lên ngang ngửa trời xanh! Style cá tính, hợp đi chơi, đi học, đi làm, còn chờ gì mà không “bốc” ngay một em?",
+    "images": [
+      "./asset/img/SoMiSoTuNgang.webp",
+      "./asset/img/SoMiSoTuNgang_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Sọc cá tính, ai mặc cũng khác biệt.",
+      "Form rộng, thoải mái “quẩy” hết mình.",
+      "Vải mềm, sờ phát là mê!"
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Nhẹ tay với áo, áo thích được chiều chuộng.",
+      "Ủi nhẹ, tránh để áo “nóng tính”.",
+      "Phơi gió, tránh nắng gắt nha!"
+    ]
+  },
+ "FQR037": {
+    "name": "Quần Ống Rộng Sọc",
+    "price": "480.000đ",
+    "listedPrice": 530000,
+    "currentSellingPrice": 480000,
+    "description": "Quần ống rộng sọc – mặc vào là chân dài miên man, style cá tính, hack dáng đỉnh cao! Sọc dọc giúp bạn trông thon gọn, phối đơn giản mà vẫn nổi bần bật giữa phố.",
+    "images": [
+      "./asset/img/QuanOngRongSoc1.webp",
+      "./asset/img/QuanOngRongSoc1_hover.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Ống rộng trendy, giấu nhẹm khuyết điểm.",
+      "Sọc dọc hack dáng, lên hình là thấy chân dài.",
+      "Vải mềm, mát, mặc cả ngày vẫn dễ chịu."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-66 cm", "hip": "86-92 cm" },
+      { "size": "M", "waist": "67-73 cm", "hip": "93-99 cm" },
+      { "size": "L", "waist": "74-80 cm", "hip": "100-106 cm" },
+      { "size": "XL", "waist": "81-87 cm", "hip": "107-113 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ, quần thích đi 'bơi' chậm rãi.",
+      "Ủi ở nhiệt độ thấp, đừng làm quần 'nóng mặt'.",
+      "Phơi nơi râm mát, quần sẽ luôn tươi mới như mood bạn!"
+    ]
+  },
+			"YAS249": {
+    "name": "Áo Sơ Mi Cơ Bản",
+    "price": "495.000đ",
+    "listedPrice": 550000,
+    "currentSellingPrice": 495000,
+    "description": "Áo sơ mi cơ bản – item không thể thiếu cho mọi tủ đồ! Dễ phối, dễ diện, mặc đi học, đi làm hay cà phê đều chuẩn chỉnh. Diện lên là thấy tự tin, style lên hẳn vài bậc!",
+    "images": [
+      "./asset/img/AoSoMiCoBan1.webp",
+      "./asset/img/AoSoMiCoBan1_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Form basic quốc dân, ai mặc cũng hợp.",
+      "Vải mềm, mịn, không nhăn, mặc là mê.",
+      "Phối được với mọi loại quần, váy, thậm chí mặc khoác ngoài cũng siêu xinh."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ, áo thích đi dạo với nước mát.",
+      "Ủi sơ sơ là xịn liền, không cần cầu kỳ đâu nè.",
+      "Phơi nơi râm mát, áo sẽ luôn thơm tho, sẵn sàng cùng bạn đi khắp thế gian!"
+    ]
+			,
+				"FQR036": {
+    "name": "Quần Ống Rộng Trơn",
+    "price": "295,000₫",
+    "listedPrice": 350000,
+    "currentSellingPrice": 295000,
+    "description": "Quần ống rộng trơn - item quốc dân cho những ngày muốn 'bung xõa' mà vẫn cực kỳ trendy! Dễ mặc, dễ phối, lên form đẹp mà không cần suy nghĩ nhiều. Quần này giúp bạn hack dáng, hack mood, mặc là yêu ngay!",
+    "images": [
+      "./asset/img/QuanOngRongTron1.jpg",
+      "./asset/img/QuanOngRongTron1_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Ống rộng basic, giấu khuyết điểm siêu đỉnh.",
+      "Vải mềm mịn, mặc mát mẻ cả ngày.",
+      "Màu sắc dễ phối, hợp mọi phong cách từ nhẹ nhàng đến cá tính."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-66 cm", "hip": "86-92 cm" },
+      { "size": "M", "waist": "67-73 cm", "hip": "93-99 cm" },
+      { "size": "L", "waist": "74-80 cm", "hip": "100-106 cm" },
+      { "size": "XL", "waist": "81-87 cm", "hip": "107-113 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ hoặc giặt tay, quần không thích bị vắt mạnh đâu nha!",
+      "Ủi sơ với nhiệt độ thấp, quần sẽ luôn thẳng thớm, sẵn sàng vi vu.",
+      "Phơi nơi râm mát, quần sẽ 'happy' với bạn cả tuần!"
+    ]
+  },
+				"QK990": {
+    "name": "Quần Ống Rộng Xếp Ly",
+    "price": "595,000₫",
+    "listedPrice": 650000,
+    "currentSellingPrice": 595000,
+    "description": "Quần ống rộng xếp ly – 'chiếc quần quốc dân' cho những ngày cần sự thoải mái mà vẫn muốn style xịn sò! Xếp ly tinh tế giúp tôn dáng, phối đồ cực dễ, đi đâu ai cũng phải ngoái nhìn.",
+    "images": [
+      "asset/img/Quần Ống Rộng Xếp L1.jpg",
+      "asset/img/Quần Ống Rộng Xếp Ly.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Ống rộng trendy, mặc vào là chân dài miên man.",
+      "Xếp ly phía trước tăng vẻ thanh lịch, hack dáng cực đỉnh.",
+      "Chất vải mềm, thoáng, mặc đi chơi hay đi làm đều ổn áp."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-66 cm", "hip": "86-92 cm" },
+      { "size": "M", "waist": "67-73 cm", "hip": "93-99 cm" },
+      { "size": "L", "waist": "74-80 cm", "hip": "100-106 cm" },
+      { "size": "XL", "waist": "81-87 cm", "hip": "107-113 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ nhàng để giữ xếp ly luôn như mới.",
+      "Ủi ở nhiệt độ thấp, quần sẽ phẳng đẹp, không lo mất dáng.",
+      "Phơi nơi râm mát, quần thích 'tận hưởng' gió trời cùng bạn!"
+    ]
+  },"QK090": {
+    "name": "Chân Váy Linen Hoa Xòe",
+    "price": "395,000₫",
+    "listedPrice": 450000,
+    "currentSellingPrice": 395000,
+    "description": "Chân váy linen hoa xòe – diện lên là hóa nàng thơ giữa mùa hè! Họa tiết hoa nhẹ nhàng, xòe bồng bềnh, mỗi bước đi là một màn 'tung váy' rực rỡ. Linen mát dịu, mặc cả ngày vẫn siêu thoải mái.",
+    "images": [
+      "asset/img/Chân Váy Linen Hoa Xòe.webp",
+      "asset/img/Chân Váy Linen Hoa Xòe 1.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Linen thoáng mát, thấm hút mồ hôi tuyệt vời.",
+      "Dáng xòe bồng bềnh, lên hình là auto xinh.",
+      "Họa tiết hoa tươi tắn, mỗi ngày là một ngày vui."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "waist": "66-71 cm", "hip": "90-95 cm" },
+      { "size": "L", "waist": "72-77 cm", "hip": "96-102 cm" }
+    ],
+    "careInstructions": [
+      "Giặt tay nhẹ nhàng để váy luôn bồng bềnh.",
+      "Ủi ở nhiệt độ thấp, váy thích được chăm chút đó nha!",
+      "Phơi nơi râm mát, váy sẽ luôn thơm tho, tươi mới."
+    ]
+  },
+  "S5757": {
+    "name": "Áo Sơ Mi Phối Classic",
+    "price": "479.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 479000,
+    "description": "Classic nhưng không hề nhàm chán! Áo sơ mi phối Classic – mặc đi gặp crush là auto được khen “gu”. Lên đồ ngay, rủ bạn thân mặc đôi càng vui.",
+    "images": [
+      "./asset/img/AoSoMiClassic.jpg",
+      "./asset/img/AoSoMiClassic_hover.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Phối màu chuẩn xịn, không lo lỗi thời.",
+      "Form vừa vặn, mặc lên là thấy thích.",
+      "Chất vải cực mát, không sợ nóng."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ, đừng “bạo lực” với áo nha.",
+      "Ủi sơ sơ là phẳng phiu ngay.",
+      "Phơi nơi có gió, áo sẽ thơm hơn đó!"
+    ]
+  },
+				"CC12": {
+    "name": "Quần Jean Suông Pancy",
+    "price": "595,000₫",
+    "listedPrice": 650000,
+    "currentSellingPrice": 595000,
+    "description": "Quần jean suông Pancy – chuẩn trendy, diện lên là chân dài miên man, style cá tính khỏi bàn! Chất jean dày dặn, dáng suông hack dáng cực đỉnh, phối áo gì cũng auto đẹp.",
+    "images": [
+      "asset/img/QuanJeanSuong1_hover.jpg",
+      "asset/img/QuanJeanSuong1.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Form suông hiện đại, lên dáng cực chất.",
+      "Chất jean bền, không bai nhão, mặc càng lâu càng đẹp.",
+      "Màu xanh basic dễ phối, mặc đi học, đi làm hay đi chơi đều hợp."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "62-68 cm", "hip": "86-92 cm" },
+      { "size": "M", "waist": "69-75 cm", "hip": "93-99 cm" },
+      { "size": "L", "waist": "76-82 cm", "hip": "100-106 cm" },
+      { "size": "XL", "waist": "83-89 cm", "hip": "107-113 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ hoặc giặt tay, tránh dùng chất tẩy mạnh để jean luôn bền màu.",
+      "Phơi nơi râm mát, tránh ánh nắng trực tiếp để vải không bị bạc màu.",
+      "Ủi ở nhiệt độ vừa phải, quần jean thích sự dịu dàng!"
+    ]
+  },
+  "FAS345": {
+    "name": "Áo Họa Tiết Hoa",
+    "price": "495.000₫",
+    "listedPrice": 540000,
+    "currentSellingPrice": 495000,
+    "description": "Này là Áo Họa Tiết Hoa, nhưng mặc lên là “không thường” chút nào đâu nha! Đảm bảo ai thấy cũng phải hỏi bạn mua ở đâu đấy!",
+    "images": [
+      "./asset/img/AoHoaTietHoa.webp",
+      "./asset/img/AoHoaTietHoa_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Họa tiết hoa cá tính, nổi bật giữa đám đông.",
+      "Vải mát, mặc là mê, đi đâu cũng muốn mặc.",
+      "Form chuẩn, mặc lên là “auto đẹp trai/xinh gái”."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt riêng lần đầu cho áo làm quen nước.",
+      "Ủi nhẹ, áo sẽ cảm ơn bạn bằng sự phẳng phiu.",
+      "Cất áo vào tủ nhớ rủ thêm bạn áo khác cho vui!"
+    ],
+  },
+	
+  "FAS324": {
+    "name": "Áo Sơ Mi Hoạ Tiết Regular",
+    "price": "450.000đ",
+    "listedPrice": 500000,
+    "currentSellingPrice": 450000,
+    "description": "Bạn thích nổi bật mà vẫn thanh lịch? Áo sơ mi họa tiết Regular chính là lựa chọn 'chuẩn bài' cho ngày mới rực rỡ. Mặc lên là thấy tự tin xuống phố, ai cũng phải ngoái nhìn!",
+    "images": [
+      "./asset/img/SoMiSuongTayDai_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Họa tiết độc đáo, diện là 'auto' nổi bật!",
+      "Form regular dễ mặc, ai cũng hợp.",
+      "Chất vải mềm, mát lạnh, mặc hoài không chán."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Nhớ giặt riêng lần đầu để áo 'làm quen' với bạn nhé!",
+      "Ủi nhẹ nhàng, đừng để áo 'giận dỗi'.",
+      "Phơi nơi râm mát cho áo luôn tươi mới."
+    ]
+  },
+  "FAS322": {
+    "name": "Áo Sơ Mi Hoạ Tiết Regar-Ri",
+    "price": "420.000đ",
+    "listedPrice": 470000,
+    "currentSellingPrice": 420000,
+    "description": "Muốn 'đổi gió' phong cách? Áo sơ mi họa tiết Regar-Ri sẽ giúp bạn nổi bật, trẻ trung và luôn tươi vui như ngày hội! Mặc đi làm hay đi chơi đều xinh lung linh.",
+    "images": [
+      "./asset/img/AoSoMiRegular_FAS324.jpg",
+      "./asset/img/AoSoMiRegular_FAS324_hover.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Họa tiết lạ mắt, nhìn là mê.",
+      "Form chuẩn, dễ phối mọi outfit.",
+      "Vải nhẹ, mặc lên là thấy 'zui ze' cả ngày."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt tay hoặc máy đều ổn, nhưng đừng 'bạo lực' quá nha!",
+      "Ủi sơ là phẳng ngay, không mất công chút nào.",
+      "Phơi lên là áo lại sẵn sàng cùng bạn vi vu."
+    ]
+  },
+  "F1167": {
+    "name": "Áo Sơ Mi Sọc Oversize",
+    "price": "499.000đ",
+    "listedPrice": 550000,
+    "currentSellingPrice": 499000,
+    "description": "Áo sơ mi sọc oversize cá tính – diện vào là mood lên cao vút! Dành cho những ai thích 'bung xõa' và luôn muốn khác biệt.",
+    "images": [
+      "./asset/img/AoSoMiSocDen.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Sọc cá tính, không lo đụng hàng.",
+      "Form rộng cực 'chill', tha hồ hoạt động.",
+      "Vải siêu mát, mặc vào là cứ muốn 'đu đưa'."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ nhàng, đừng để áo buồn nha!",
+      "Ủi sơ sơ là phẳng ngay.",
+      "Phơi gió, tránh nắng gắt cho áo luôn tươi."
+    ]
+  },
+  "FAS274": {
+    "name": "Áo Sơ Mi Cúc Ngọc Trai",
+    "price": "550.000đ",
+    "listedPrice": 620000,
+    "currentSellingPrice": 550000,
+    "description": "Đỉnh cao sang chảnh là đây! Áo sơ mi cúc ngọc trai, diện lên là 'chanh sả', sang xịn hết nấc. Lên đồ đi trà sữa là auto được khen liền!",
+    "images": [
+      "./asset/img/AoSoMiSocNutNgocTrai.jpg",
+      "./asset/img/AoSoMiSocNutNgocTrai_hover.jpg"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Cúc ngọc trai xinh xắn, nhìn là mê.",
+      "Form basic, dễ phối mọi lúc mọi nơi.",
+      "Vải dày dặn, đứng form, mặc lên là chuẩn gu."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt riêng lần đầu cho áo làm quen nước.",
+      "Ủi nhẹ, áo sẽ cảm ơn bạn bằng sự phẳng phiu.",
+      "Cất áo vào tủ nhớ rủ thêm bạn áo khác cho vui!"
+    ]
+  },
+  "C8765": {
+    "name": "Áo Sơ Mi Trơn",
+    "price": "470.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 470000,
+    "description": "Ai bảo trơn là đơn điệu? Áo sơ mi trơn này diện lên là thăng hạng style, đi đâu cũng được khen ngầu! Mặc đi học, đi chơi, đi làm đều hợp lý hết nha.",
+    "images": [
+      "./asset/img/AoSoMiTron.webp",
+      "./asset/img/AoSoMiTron_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Thiết kế tối giản, phối đồ siêu dễ.",
+      "Form chuẩn, lên dáng cực xinh.",
+      "Chất vải mềm, mát và không nhăn."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Áo thích được giặt máy nhẹ hoặc giặt tay nha!",
+      "Ủi sơ sơ là phẳng phiu ngay.",
+      "Phơi nơi gió mát, áo sẽ rất cảm kích bạn!"
+    ]
+  },
+  "S1756": {
+    "name": "Áo Sơ Mi Sọc Xanh",
+    "price": "490.000đ",
+    "listedPrice": 540000,
+    "currentSellingPrice": 490000,
+    "description": "Muốn ngày mới tươi xanh như mơ? Áo sơ mi sọc xanh sẽ giúp bạn nổi bật nhưng vẫn dịu dàng. Mặc lên là thấy yêu đời, gặp ai cũng cười tươi như hoa.",
+    "images": [
+      "./asset/img/ChanVayXoe2Tang.jpg",
+      "./asset/img/AoSoMiSocXanh_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Sọc xanh trẻ trung, nổi bật giữa đám đông.",
+      "Form vừa vặn, dễ mặc dễ phối.",
+      "Vải mát lạnh, mặc lên là thấy yêu đời liền."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ, tránh ngâm lâu cho màu áo bền đẹp.",
+      "Ủi ở nhiệt độ nhẹ thôi nha!",
+      "Phơi nơi râm mát, áo thích vậy nhất!"
+    ]
+  },
+  "FTS290": {
+    "name": "Áo Sơ Mi Trơn",
+    "price": "390.000đ",
+    "listedPrice": 450000,
+    "currentSellingPrice": 390000,
+    "description": "Đơn giản mà chất lừ! Áo sơ mi trơn này là 'vũ khí' bí mật của mọi tín đồ thời trang. Mặc lên tự tin cả ngày, đi đâu cũng thấy vui vẻ, năng động.",
+    "images": [
+      "./asset/img/AoSoMiTron2.jpg",
+      "./asset/img/AoSoMiTron2_hover.webp"
+    ],
+    "sizes": ["M", "L", "XL"],
+    "features": [
+      "Thiết kế basic nhưng không hề nhàm chán.",
+      "Chất liệu nhẹ, mát, rất thích hợp ngày hè.",
+      "Form chuẩn, ai mặc cũng đẹp trai/xinh gái lên vài bậc."
+    ],
+    "sizeGuide": [
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt cùng áo màu sáng cho tươi tắn.",
+      "Ủi sơ sơ là phẳng ngay, không cần cầu kỳ.",
+      "Phơi chỗ mát mẻ để áo 'tươi tỉnh' mỗi ngày."
+    ]
+  },
+  "FAS299": {
+    "name": "Áo Sơ Mi Hoa Form Suông Regular",
+    "price": "490.000đ",
+    "listedPrice": 540000,
+    "currentSellingPrice": 490000,
+    "description": "Hoa này không chỉ để ngắm, mà còn để mặc cho tỏa sáng! Áo sơ mi hoa form suông Regular, diện lên là bao tươi, bao xinh. Đảm bảo ai cũng phải ngoái nhìn bạn!",
+    "images": [
+      "./asset/img/AoSoMiFormSuong_Hoa.webp",
+      "./asset/img/AoSoMiFormSuong_Hoa_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Họa tiết hoa tươi tắn, tràn đầy năng lượng.",
+      "Form suông thoải mái, giấu nhẹm khuyết điểm.",
+      "Vải mềm, thích hợp mặc cả bốn mùa."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ, đừng để hoa bị 'buồn'.",
+      "Ủi ở nhiệt độ thấp để hoa luôn tươi.",
+      "Phơi nơi có gió, hoa sẽ 'tung tăng' cùng bạn!"
+    ]
+  },
+			"FAS290": {
+    "name": "Áo Sơ Mi Trơn",
+    "price": "390.000đ",
+    "listedPrice": 450000,
+    "currentSellingPrice": 390000,
+    "description": "Đơn giản mà không hề đơn điệu! Áo sơ mi trơn này là lựa chọn cực xịn cho những ngày bạn muốn 'tối giản' mà vẫn nổi bật. Mặc đi làm, đi học hay đi chơi đều hợp, ai nhìn cũng phải gật gù khen 'gu chất'!",
+    "images": [
+      "./asset/img/AoSoMiTron2.jpg",
+      "./asset/img/AoSoMiTron2_hover.webp"
+    ],
+    "sizes": ["M", "L", "XL"],
+    "features": [
+      "Thiết kế basic, phối đồ 'auto' đẹp.",
+      "Chất vải mềm mịn, mặc mát như quạt điều hòa!",
+      "Form vừa vặn, mặc lên là thấy yêu luôn."
+    ],
+    "sizeGuide": [
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ nhàng, đừng để áo 'giận dỗi' nhàu nát nhé!",
+      "Ủi sơ sơ là phẳng phiu, đi chơi là auto đẹp trai/xinh gái.",
+      "Phơi nơi có gió, áo sẽ thơm phức và luôn vui vẻ đồng hành cùng bạn!"
+    ]
+  },
+			"V3473": {
+    "name": "Chân Váy Xòe Dáng Dài",
+    "price": "520.000đ",
+    "listedPrice": 570000,
+    "currentSellingPrice": 520000,
+    "description": "Chân váy xòe dáng dài – 'bảo bối' cho những ngày muốn tung tăng như nàng thơ trên phố! Dáng dài che nắng, tôn dáng, phối với áo nào cũng hợp, chân váy này diện lên là tự tin 'sải bước' như trên sàn runway nha!",
+    "images": [
+      "./asset/img/ChanVayXeoDangDai.jpg",
+      "./asset/img/ChanVayXeoDangDai_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Dáng xòe dài bồng bềnh, tha hồ xoay vòng selfie.",
+      "Vải mềm mịn, đi nắng không lo nóng.",
+      "Dễ phối đủ kiểu áo, từ thun basic đến croptop bánh bèo."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "waist": "65-70 cm", "hip": "90-94 cm" },
+      { "size": "L", "waist": "71-76 cm", "hip": "95-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt tay hoặc máy đều được, nhớ cho chân váy đi bơi nhẹ nhàng.",
+      "Ủi ở nhiệt độ thấp, chân váy thích được vuốt ve dịu dàng.",
+      "Phơi nơi râm mát, chân váy sẽ 'tươi rói' đợi bạn mặc đi chơi!"
+    ]
+  }
+        };
+
+
+        // --- CÁC BIẾN VÀ PHẦN TỬ DOM ---
+        let currentProduct = null; // Sản phẩm hiện tại đang được hiển thị
+        let appliedDiscountFromCode = 0; // Số tiền giảm giá được áp dụng từ mã
+        let selectedSize = null; // Kích thước được chọn
+
+        // Giá sản phẩm (mặc định cho demo nếu không có ID sản phẩm)
+        const DEFAULT_LISTED_PRICE = 490000;
+        const DEFAULT_CURRENT_SELLING_PRICE = 465500;
+
+        const productNameElem = document.getElementById('productName');
+        const productSkuElem = document.getElementById('product-sku');
+        const currentPriceElement = document.getElementById('current-price');
+        const originalPriceDisplayElement = document.getElementById('original-price-display');
+        const savingsAmountElement = document.getElementById('savings-amount');
+        const finalPriceDisplayValueElement = document.getElementById('final-price-display-value'); // Đổi ID
+        const discountButtons = document.querySelectorAll('.discount-codes-new button'); // Đổi class
+        const sizeOptionsContainer = document.getElementById('size-options-container'); // Đổi ID
+        const productQuantityInput = document.getElementById('productQuantity');
+        const incrementQuantityBtn = document.getElementById('incrementQuantity');
+        const decrementQuantityBtn = document.getElementById('decrementQuantity');
+        const addToCartBtn = document.getElementById('addToCartBtn');
+        const buyNowBtn = document.querySelector('.buy-now-btn'); // Lấy lại bằng class
+
+        // Các phần tử cho Accordion chi tiết sản phẩm
+        const productDescriptionBody = document.getElementById('productDescriptionBody');
+        const productFeaturesList = document.getElementById('productFeatures');
+        const sizeTableHeader = document.getElementById('sizeTableHeader');
+        const sizeTableBody = document.getElementById('sizeTableBody');
+        const productCareInstructionsList = document.getElementById('productCareInstructions');
+        const customMessageBox = document.getElementById('customMessageBox');
+
+        // --- CÁC HÀM TIỆN ÍCH ---
+
+        // Hàm hiển thị thông báo tùy chỉnh
+        function showCustomMessage(message, duration = 3000) {
+            customMessageBox.textContent = message;
+            customMessageBox.classList.add('show');
+            setTimeout(() => {
+                customMessageBox.classList.remove('show');
+            }, duration);
+        }
+
+        // Hàm định dạng tiền tệ (thêm dấu chấm phân cách hàng nghìn)
+        function formatCurrency(amount) {
+            return amount.toLocaleString('vi-VN'); // Sử dụng locale Việt Nam để có dấu chấm
+        }
+
+        // Hàm cập nhật giá hiển thị và số tiền tiết kiệm
+        function updatePriceAndSavingsDisplay() {
+            if (!currentProduct) return;
+
+            // Giá cuối cùng sau khi áp dụng mã giảm giá
+            const finalPriceAfterCode = currentProduct.currentSellingPrice - appliedDiscountFromCode;
+            currentPriceElement.textContent = formatCurrency(finalPriceAfterCode);
+            finalPriceDisplayValueElement.textContent = formatCurrency(finalPriceAfterCode);
+
+            // Số tiền tiết kiệm so với giá niêm yết ban đầu của sản phẩm hiện tại
+            const totalSavings = currentProduct.listedPrice - finalPriceAfterCode;
+            savingsAmountElement.textContent = formatCurrency(totalSavings);
+        }
+
+        // Hàm cập nhật số lượng sản phẩm trên icon giỏ hàng
+        function updateCartIconQuantity() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const totalQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const cartQuantitySpan = document.getElementById('cartQuantity');
+
+            if (totalQuantity > 0) {
+                cartQuantitySpan.textContent = totalQuantity;
+                cartQuantitySpan.style.display = 'inline-block';
+            } else {
+                cartQuantitySpan.style.display = 'none';
+            }
+        }
+
+        // Hàm lấy tham số từ URL
+        function getParameterByName(name, url = window.location.href) {
+            name = name.replace(/[\[\]]/g, '\\$&');
+            var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, ' '));
+        }
+
+        // Hàm hiển thị chi tiết sản phẩm
+        function displayProductDetails(product) {
+            currentProduct = product; // Gán sản phẩm hiện tại
+
+            // Cập nhật tiêu đề trang
+            document.title = product.name + " - HUIT VUITON";
+
+            // Hiển thị thông tin cơ bản
+            productNameElem.textContent = product.name;
+            productSkuElem.textContent = "NKDV2503009"; // Giữ cố định SKU như ảnh mẫu, hoặc cập nhật nếu có trong data
+            originalPriceDisplayElement.textContent = formatCurrency(product.listedPrice) + ' VNĐ';
+            updatePriceAndSavingsDisplay(); // Cập nhật giá và tiết kiệm ban đầu
+
+            // Xây dựng Carousel ảnh
+            const carouselInner = document.querySelector('#productCarousel .carousel-inner');
+            const thumbnailIndicators = document.getElementById('thumbnail-indicators');
+            carouselInner.innerHTML = '';
+            thumbnailIndicators.innerHTML = '';
+
+            if (product.images && product.images.length > 0) {
+                product.images.forEach((imageSrc, index) => {
+                    // Carousel item
+                    const carouselItem = document.createElement('div');
+                    carouselItem.classList.add('carousel-item');
+                    if (index === 0) carouselItem.classList.add('active');
+                    const img = document.createElement('img');
+                    img.src = imageSrc;
+                    img.classList.add('d-block', 'w-100');
+                    img.alt = `${product.name} - Image ${index + 1}`;
+                    carouselItem.appendChild(img);
+                    carouselInner.appendChild(carouselItem);
+
+                    // Thumbnail indicator
+                    const colDiv = document.createElement('div');
+                    colDiv.classList.add('col-3'); // Bootstrap grid for 4 thumbnails per row
+                    const thumbnailBtn = document.createElement('button');
+                    thumbnailBtn.type = 'button';
+                    thumbnailBtn.setAttribute('data-bs-target', '#productCarousel');
+                    thumbnailBtn.setAttribute('data-bs-slide-to', index);
+                    thumbnailBtn.classList.add('thumbnail-btn');
+                    if (index === 0) thumbnailBtn.classList.add('active');
+                    thumbnailBtn.setAttribute('aria-current', index === 0 ? 'true' : 'false');
+                    thumbnailBtn.setAttribute('aria-label', `Slide ${index + 1}`);
+
+                    const thumbnailImg = document.createElement('img');
+                    thumbnailImg.src = imageSrc;
+                    thumbnailImg.classList.add('img-fluid', 'rounded', 'border');
+                    thumbnailImg.alt = `Thumbnail ${index + 1}`;
+
+                    thumbnailBtn.appendChild(thumbnailImg);
+                    colDiv.appendChild(thumbnailBtn);
+                    thumbnailIndicators.appendChild(colDiv);
+                });
+            } else {
+                // Placeholder if no images
+                carouselInner.innerHTML = `
+                    <div class="carousel-item active">
+                        <img src="https://placehold.co/600x600/cccccc/333333?text=No+Image" class="d-block w-100" alt="No Image">
+                    </div>`;
+            }
+
+            // Tạo tùy chọn kích cỡ
+            sizeOptionsContainer.innerHTML = '';
+            if (product.sizes && product.sizes.length > 0) {
+                product.sizes.forEach(size => {
+                    const sizeOption = document.createElement('div');
+                    sizeOption.classList.add('size-option-new');
+                    sizeOption.dataset.size = size;
+                    sizeOption.textContent = size;
+                    sizeOption.addEventListener('click', () => {
+                        // Bỏ chọn tất cả các size khác
+                        document.querySelectorAll('.size-option-new').forEach(opt => opt.classList.remove('selected'));
+                        // Chọn size hiện tại hoặc bỏ chọn nếu đã chọn
+                        if (selectedSize === size) {
+                            selectedSize = null;
+                        } else {
+                            selectedSize = size;
+                            sizeOption.classList.add('selected');
+                        }
+                        console.log('Kích thước đã chọn:', selectedSize);
+                    });
+                    sizeOptionsContainer.appendChild(sizeOption);
+                });
+                // Disable một số size (ví dụ: size L hết hàng)
+                const outOfStockSizes = ['L'];
+                document.querySelectorAll('.size-option-new').forEach(option => {
+                    if (outOfStockSizes.includes(option.dataset.size)) {
+                        option.classList.add('disabled');
+                    }
+                });
+            } else {
+                const sizeOption = document.createElement('div');
+                sizeOption.classList.add('size-option-new', 'selected');
+                sizeOption.dataset.size = "One Size";
+                sizeOption.textContent = "One Size";
+                selectedSize = "One Size"; // Mặc định chọn nếu chỉ có một size
+                sizeOptionsContainer.appendChild(sizeOption);
+            }
+
+            // Hiển thị nội dung chi tiết sản phẩm trong Accordion
+            productDescriptionBody.innerHTML = product.description; // Giả định description là HTML
+            
+            // Đặc điểm nổi bật
+            productFeaturesList.innerHTML = '';
+            if (product.features && product.features.length > 0) {
+                product.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    productFeaturesList.appendChild(li);
+                });
+            }
+
+            // Bảng quy đổi size
+            sizeTableHeader.innerHTML = '';
+            sizeTableBody.innerHTML = '';
+            if (product.sizeGuide && product.sizeGuide.length > 0) {
+                const headers = Object.keys(product.sizeGuide[0]).map(key => {
+                    switch (key) {
+                        case 'size': return 'Size';
+                        case 'weight': return 'Cân nặng';
+                        case 'height': return 'Chiều cao';
+                        case 'bust': return 'Vòng ngực';
+                        case 'waist': return 'Vòng eo';
+                        case 'hip': return 'Vòng mông';
+                        case 'shoulder': return 'Vai';
+                        default: return key;
+                    }
+                });
+
+                const headerRow = document.createElement('tr');
+                headers.forEach(headerText => {
+                    const th = document.createElement('th');
+                    th.textContent = headerText;
+                    headerRow.appendChild(th);
+                });
+                sizeTableHeader.appendChild(headerRow);
+
+                product.sizeGuide.forEach(sizeInfo => {
+                    const row = document.createElement('tr');
+                    Object.values(sizeInfo).forEach(value => {
+                        const td = document.createElement('td');
+                        td.textContent = value;
+                        row.appendChild(td);
+                    });
+                    sizeTableBody.appendChild(row);
+                });
+            }
+
+            // Hướng dẫn sử dụng
+            productCareInstructionsList.innerHTML = '';
+            if (product.careInstructions && product.careInstructions.length > 0) {
+                product.careInstructions.forEach(instruction => {
+                    const li = document.createElement('li');
+                    li.textContent = instruction;
+                    productCareInstructionsList.appendChild(li);
+                });
+            }
+        }
+
+        // --- XỬ LÝ SỰ KIỆN ---
+
+        // Xử lý sự kiện click cho các nút mã giảm giá
+        discountButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const discountAmount = parseInt(button.dataset.discount);
+                const discountCode = button.dataset.code;
+
+                // Bỏ chọn tất cả các mã giảm giá khác
+                discountButtons.forEach(btn => btn.classList.remove('selected', 'btn-danger'));
+                discountButtons.forEach(btn => btn.classList.add('btn-outline-danger'));
+
+
+                // Chọn mã giảm giá hiện tại hoặc bỏ chọn nếu đã chọn
+                if (appliedDiscountFromCode === discountAmount) {
+                    appliedDiscountFromCode = 0;
+                    button.classList.remove('selected', 'btn-danger');
+                    button.classList.add('btn-outline-danger');
+                } else {
+                    appliedDiscountFromCode = discountAmount;
+                    button.classList.remove('btn-outline-danger');
+                    button.classList.add('selected', 'btn-danger');
+                }
+
+                updatePriceAndSavingsDisplay();
+                console.log(`Mã giảm giá áp dụng: ${discountCode || 'Không có'}, Giảm: ${formatCurrency(appliedDiscountFromCode)} VNĐ`);
+            });
+        });
+
+        // Xử lý nút tăng/giảm số lượng
+        incrementQuantityBtn.addEventListener('click', () => {
+            let quantity = parseInt(productQuantityInput.value);
+            productQuantityInput.value = quantity + 1;
+        });
+
+        decrementQuantityBtn.addEventListener('click', () => {
+            let quantity = parseInt(productQuantityInput.value);
+            if (quantity > 1) {
+                productQuantityInput.value = quantity - 1;
+            }
+        });
+
+        // Xử lý nút "Sao chép" mã khuyến mãi
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const targetId = button.dataset.copyTarget;
+                const textToCopy = document.getElementById(targetId).textContent;
+                
+                // Sử dụng document.execCommand('copy') thay vì navigator.clipboard.writeText()
+                // do hạn chế iframe trong môi trường Canvas
+                const tempInput = document.createElement('textarea');
+                tempInput.value = textToCopy;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                try {
+                    document.execCommand('copy');
+                    showCustomMessage(`Đã sao chép: ${textToCopy}`);
+                } catch (err) {
+                    showCustomMessage('Không thể sao chép tự động. Vui lòng sao chép thủ công.');
+                    console.error('Failed to copy text: ', err);
+                } finally {
+                    document.body.removeChild(tempInput);
+                }
+            });
+        });
+
+        // Xử lý nút "Thêm vào giỏ"
+        addToCartBtn.addEventListener('click', () => {
+            if (!selectedSize) {
+                showCustomMessage('Vui lòng chọn một kích thước trước khi thêm vào giỏ hàng.', 4000);
+                return;
+            }
+            if (!currentProduct) {
+                showCustomMessage('Không có sản phẩm để thêm vào giỏ.', 4000);
+                return;
+            }
+
+            const quantity = parseInt(productQuantityInput.value) || 1;
+            const finalPrice = currentProduct.currentSellingPrice - appliedDiscountFromCode;
+
+            // Tạo item giỏ hàng
+            const cartItem = {
+                id: currentProduct.id, // ID sản phẩm từ data mock
+                name: currentProduct.name,
+                price: finalPrice,
+                image: currentProduct.images[0],
+                size: selectedSize,
+                quantity: quantity
+            };
+
+            // Lấy giỏ hàng hiện tại
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Kiểm tra xem sản phẩm đã có trong giỏ chưa
+            const existingIndex = cart.findIndex(item =>
+                item.id === cartItem.id && item.size === cartItem.size);
+
+            if (existingIndex !== -1) {
+                // Nếu đã có, tăng số lượng
+                cart[existingIndex].quantity += quantity;
+            } else {
+                // Nếu chưa có, thêm sản phẩm mới vào giỏ hàng
+                cart.push(cartItem);
+            }
+
+            // Lưu giỏ hàng vào Local Storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            showCustomMessage(`Đã thêm ${quantity} sản phẩm ${currentProduct.name} (Size: ${selectedSize}) vào giỏ hàng!`, 4000);
+            console.log('Giỏ hàng hiện tại:', cart);
+
+            // Cập nhật số lượng sản phẩm trên icon giỏ hàng
+            updateCartIconQuantity();
+        });
+
+        // Xử lý nút "MUA NGAY"
+        buyNowBtn.addEventListener('click', () => {
+            if (!selectedSize) {
+                showCustomMessage('Vui lòng chọn một kích thước trước khi mua ngay.', 4000);
+                return;
+            }
+            if (!currentProduct) {
+                showCustomMessage('Không có sản phẩm để mua.', 4000);
+                return;
+            }
+            const finalPrice = currentProduct.currentSellingPrice - appliedDiscountFromCode;
+            showCustomMessage(`Tiến hành mua ngay!\nKích thước: ${selectedSize}\nGiá: ${formatCurrency(finalPrice)} VNĐ`, 5000);
+            // Ở đây bạn sẽ chuyển hướng người dùng đến trang thanh toán với thông tin sản phẩm
+            console.log(`Tiến hành mua ngay:
+            - SKU: ${productSkuElem.textContent}
+            - Kích thước: ${selectedSize}
+            - Giá cuối cùng: ${formatCurrency(finalPrice)} VNĐ`);
+        });
+
+        // --- KHỞI TẠO ---
+        document.addEventListener("DOMContentLoaded", function() {
+            // Lấy product ID từ URL
+            const productId = getParameterByName('id') || "2"; // Mặc định ID "2" cho demo (Đầm voan)
+
+            if (productId && productsData[productId]) {
+                displayProductDetails(productsData[productId]);
+            } else {
+                productNameElem.textContent = "Sản phẩm không tìm thấy";
+                productSkuElem.textContent = "N/A";
+                currentPriceElement.textContent = "0 VNĐ";
+                originalPriceDisplayElement.textContent = "";
+                savingsAmountElement.textContent = "0 VNĐ";
+                finalPriceDisplayValueElement.textContent = "0 VNĐ";
+                productDescriptionBody.innerHTML = "<p>Thông tin chi tiết của sản phẩm này không có sẵn.</p>";
+                productFeaturesList.innerHTML = "<li>Không có đặc điểm nổi bật.</li>";
+                productCareInstructionsList.innerHTML = "<li>Không có hướng dẫn sử dụng.</li>";
+                // Xóa bảng size nếu không có data
+                sizeTableHeader.innerHTML = '';
+                sizeTableBody.innerHTML = `<tr><td colspan="5">Không có bảng quy đổi size.</td></tr>`;
+                // Đặt ảnh placeholder cho carousel
+                document.querySelector('#productCarousel .carousel-inner').innerHTML = `
+                    <div class="carousel-item active">
+                        <img src="https://placehold.co/600x600/cccccc/333333?text=Product+Not+Found" class="d-block w-100" alt="Product Not Found">
+                    </div>`;
+                document.getElementById('thumbnail-indicators').innerHTML = ''; // Clear thumbnails
+            }
+
+            // Logic cho icon search và user (giữ nguyên)
+            const searchIcon = document.getElementById('searchIcon');
+            const searchBar = document.getElementById('searchBar');
+            const userIcon = document.getElementById('userIcon');
+            const loginForm = document.getElementById('loginForm');
+
+            searchIcon.addEventListener('click', () => {
+                searchBar.classList.toggle('active');
+                loginForm.classList.remove('active');
+            });
+
+            userIcon.addEventListener('click', () => {
+                loginForm.classList.toggle('active');
+                searchBar.classList.remove('active');
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!searchBar.contains(event.target) && !searchIcon.contains(event.target)) {
+                    searchBar.classList.remove('active');
+                }
+                if (!loginForm.contains(event.target) && !userIcon.contains(event.target)) {
+                    loginForm.classList.remove('active');
+                }
+            });
+
+            // Cập nhật số lượng giỏ hàng khi tải trang
+            updateCartIconQuantity();
+        });
+    </script>
+	
+</body>
+</html>
