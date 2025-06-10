@@ -1,0 +1,1463 @@
+        // MOCK DATA SẢN PHẨM
+       const productsData  = {
+           "1": {
+    "name": "Quần Jean dáng Đứng",
+    "price": "499.000đ",
+    "listedPrice": 550000,
+    "currentSellingPrice": 499000,
+    "description": "Quần jean dáng đứng cổ điển, phù hợp cho mọi vóc dáng. Chất liệu denim cao cấp, bền màu, mang lại sự thoải mái tối đa khi mặc.",
+    "images": [
+      "./asset/img/QuanJeanDangDung.jpg"
+    ],
+    "sizes": ["28", "29", "30", "31", "32"],
+    "features": [
+      "Chất liệu jean cotton 100%, thoáng khí và bền đẹp.",
+      "Thiết kế dáng đứng tạo cảm giác chân dài và thon gọn.",
+      "Dễ dàng phối hợp với áo thun, áo sơ mi cho nhiều dịp."
+    ],
+    "sizeGuide": [
+      { "size": "28", "weight": "45-50 kg", "height": "1m55-1m60", "waist": "72-76 cm", "hip": "90-94 cm" },
+      { "size": "29", "weight": "51-55 kg", "height": "1m60-1m65", "waist": "77-81 cm", "hip": "95-99 cm" },
+      { "size": "30", "weight": "56-60 kg", "height": "1m65-1m70", "waist": "82-86 cm", "hip": "100-104 cm" },
+      { "size": "31", "weight": "61-65 kg", "height": "1m70-1m75", "waist": "87-91 cm", "hip": "105-109 cm" },
+      { "size": "32", "weight": "66-70 kg", "height": "1m75-1m80", "waist": "92-96 cm", "hip": "110-114 cm" }
+    ],
+    "careInstructions": [
+      "Giặt riêng với quần áo màu sáng trong lần giặt đầu tiên.",
+      "Lộn trái sản phẩm khi giặt và phơi.",
+      "Không sử dụng thuốc tẩy mạnh.",
+      "Phơi trong bóng râm, tránh ánh nắng trực tiếp để giữ màu."
+    ]
+  },
+  "2": {
+    "name": "Áo Sơ Mi Sọc Đen",
+    "price": "420.000đ",
+    "listedPrice": 479000,
+    "currentSellingPrice": 420000,
+    "description": "Áo sơ mi sọc đen cá tính – lựa chọn hoàn hảo cho phong cách thanh lịch pha chút nổi bật. Thiết kế unisex dễ phối, làm bừng sáng mọi outfit của bạn.",
+    "images": [
+      "./asset/img/AoSoMiSocDen.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Chất liệu vải cotton mềm mại, thấm hút tốt.",
+      "Sọc đen tinh tế, phù hợp đi học, đi làm hay dạo phố.",
+      "Form rộng thoải mái, dễ phối cùng quần jean, short hoặc chân váy."
+    ],
+    "sizeGuide": [
+      { "size": "S", "weight": "45-52 kg", "height": "1m50-1m60", "chest": "80-86 cm" },
+      { "size": "M", "weight": "53-59 kg", "height": "1m60-1m68", "chest": "87-93 cm" },
+      { "size": "L", "weight": "60-66 kg", "height": "1m68-1m75", "chest": "94-100 cm" },
+      { "size": "XL", "weight": "67-73 kg", "height": "1m75-1m80", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ ở nhiệt độ dưới 30°C.",
+      "Ủi ở nhiệt độ trung bình.",
+      "Tránh giặt chung với quần áo có màu đậm."
+    ]
+  },
+  "3": {
+    "name": "Áo Sơ Mi Trơn",
+    "price": "390.000đ",
+    "listedPrice": 450000,
+    "currentSellingPrice": 390000,
+    "description": "Tối giản nhưng không hề đơn điệu, áo sơ mi trơn mang đến sự thanh lịch cho mọi phong cách. Hãy để bản thân trở thành tâm điểm với nét đẹp tinh tế này!",
+    "images": [
+      "./asset/img/AoSoMiTron.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Chất vải cotton pha poly mềm mịn.",
+      "Form dáng basic, dễ phối layer hoặc mặc đơn.",
+      "Màu sắc trung tính phù hợp cả nam và nữ."
+    ],
+    "sizeGuide": [
+      { "size": "S", "weight": "45-52 kg", "height": "1m50-1m60", "chest": "80-86 cm" },
+      { "size": "M", "weight": "53-59 kg", "height": "1m60-1m68", "chest": "87-93 cm" },
+      { "size": "L", "weight": "60-66 kg", "height": "1m68-1m75", "chest": "94-100 cm" },
+      { "size": "XL", "weight": "67-73 kg", "height": "1m75-1m80", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Không giặt với nước nóng.",
+      "Tránh ngâm sản phẩm quá lâu.",
+      "Sấy ở chế độ nhẹ hoặc phơi tự nhiên."
+    ]
+  },
+  "4": {
+    "name": "Sơ Mi Hồng Classic",
+    "price": "470.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 470000,
+    "description": "Gây ấn tượng với sắc hồng nhẹ nhàng, áo sơ mi Classic là điểm nhấn cho những ngày cần sự tự tin, trẻ trung và tràn đầy năng lượng.",
+    "images": [
+      "./asset/img/AoSoMiClassic.jpg"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Tông hồng pastel trẻ trung, tôn da.",
+      "Chất vải mát, mịn, không nhăn.",
+      "Form suông nhẹ, ôm dáng vừa vặn."
+    ],
+    "sizeGuide": [
+      { "size": "S", "weight": "40-47 kg", "height": "1m50-1m58", "chest": "78-85 cm" },
+      { "size": "M", "weight": "48-54 kg", "height": "1m58-1m65", "chest": "86-92 cm" },
+      { "size": "L", "weight": "55-60 kg", "height": "1m65-1m72", "chest": "93-98 cm" }
+    ],
+    "careInstructions": [
+      "Giặt bằng tay để tránh xù lông.",
+      "Phơi nơi thoáng mát, tránh ánh nắng gắt.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  },
+  "5": {
+    "name": "Thun Nâu Cổ Điển",
+    "price": "350.000đ",
+    "listedPrice": 400000,
+    "currentSellingPrice": 350000,
+    "description": "Đơn giản nhưng tinh tế, áo thun nâu cổ điển là lựa chọn hoàn hảo cho những ai yêu thích sự nhẹ nhàng và ấm áp trong từng khoảnh khắc.",
+    "images": [
+      "./asset/img/AoThunNganPolo.webp"
+    ],
+    "sizes": ["M", "L", "XL"],
+    "features": [
+      "Chất liệu cotton 4 chiều, co giãn thoải mái.",
+      "Màu nâu dễ phối, phù hợp nhiều phong cách.",
+      "Đường may chắc chắn, bền đẹp lâu dài."
+    ],
+    "sizeGuide": [
+      { "size": "M", "weight": "50-58 kg", "height": "1m55-1m68", "chest": "87-93 cm" },
+      { "size": "L", "weight": "59-66 kg", "height": "1m68-1m75", "chest": "94-100 cm" },
+      { "size": "XL", "weight": "67-75 kg", "height": "1m75-1m82", "chest": "101-108 cm" }
+    ],
+    "careInstructions": [
+      "Lộn trái khi giặt và phơi.",
+      "Không dùng bàn chải cứng để chà lên áo.",
+      "Tránh sấy nhiệt cao."
+    ]
+  },
+  "6": {
+    "name": "Váy Suông Âu",
+    "price": "520.000đ",
+    "listedPrice": 580000,
+    "currentSellingPrice": 520000,
+    "description": "Váy suông kiểu Âu – thanh lịch, sang trọng và tinh tế giúp nàng tự tin trong mọi sự kiện. Đường cắt may tỉ mỉ tôn dáng hoàn hảo.",
+    "images": [
+      "./asset/img/chanvay.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Form suông hiện đại, che khuyết điểm tối ưu.",
+      "Chất liệu vải nhập khẩu, mềm mại, mát mẻ.",
+      "Dễ phối cùng giày cao gót hoặc sneaker."
+    ],
+    "sizeGuide": [
+      { "size": "S", "weight": "40-46 kg", "height": "1m50-1m57", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "weight": "47-53 kg", "height": "1m57-1m64", "waist": "66-70 cm", "hip": "90-94 cm" },
+      { "size": "L", "weight": "54-60 kg", "height": "1m64-1m70", "waist": "71-75 cm", "hip": "95-99 cm" },
+      { "size": "XL", "weight": "61-68 kg", "height": "1m70-1m76", "waist": "76-80 cm", "hip": "100-104 cm" }
+    ],
+    "careInstructions": [
+      "Không sử dụng thuốc tẩy.",
+      "Giặt nhẹ nhàng, tránh vắt mạnh.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  } ,
+         
+		  "V0090": {
+    "name": "Chân Váy Ngắn Xòe 2 Tầng",
+    "price": "480.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 480000,
+    "description": "Chân váy ngắn xòe hai tầng trẻ trung, bồng bềnh như làn gió mùa hè. Một item không thể thiếu cho những buổi dạo phố cùng bạn bè, giúp bạn luôn nổi bật và duyên dáng.",
+    "images": [
+      "./asset/img/ChanVayXoe2Tang.jpg"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Thiết kế hai tầng bồng bềnh, tạo hiệu ứng thon gọn đôi chân.",
+      "Chất vải lụa nhập cao cấp, mát mẻ, mềm mại.",
+      "Dễ phối với áo thun, sơ mi hoặc croptop."
+    ],
+    "sizeGuide": [
+      {"size": "S", "waist": "60-65 cm", "hip": "85-89 cm"},
+      {"size": "M", "waist": "65-70 cm", "hip": "90-94 cm"},
+      {"size": "L", "waist": "71-76 cm", "hip": "95-100 cm"}
+    ],
+    "careInstructions": [
+      "Giặt bằng tay với nước lạnh.",
+      "Tránh vắt mạnh để giữ form váy.",
+      "Ủi ở nhiệt độ thấp, tránh tiếp xúc trực tiếp với mặt vải."
+    ]
+  },
+  "S0009": {
+    "name": "Áo sơ mi Oversize Khoát ngoài",
+    "price": "400.000đ",
+    "listedPrice": 450000,
+    "currentSellingPrice": 400000,
+    "description": "Áo sơ mi oversize khoác ngoài – giải pháp hoàn hảo cho phong cách layering năng động. Chỉ cần khoác nhẹ, bạn đã sẵn sàng cho những trải nghiệm đầy cá tính.",
+    "images": [
+      "./asset/img/SoMiOverSizeCoDuoi.webp",
+      "./asset/img/SoMiOverSizeCoDuoi_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Form oversize thời thượng, thoải mái vận động.",
+      "Chất liệu cotton pha linen thoáng mát.",
+      "Phối được với nhiều kiểu áo bên trong."
+    ],
+    "sizeGuide": [
+      {"size": "S", "chest": "84-88 cm", "length": "65 cm"},
+      {"size": "M", "chest": "89-95 cm", "length": "67 cm"},
+      {"size": "L", "chest": "96-102 cm", "length": "69 cm"},
+      {"size": "XL", "chest": "103-108 cm", "length": "71 cm"}
+    ],
+    "careInstructions": [
+      "Giặt máy chế độ nhẹ.",
+      "Không dùng thuốc tẩy.",
+      "Phơi ngang, tránh nắng gắt để giữ màu áo."
+    ]
+  },
+  "S9077": {
+    "name": "Áo sơ mi tay suông trẻ trung 7",
+    "price": "510.000đ",
+    "listedPrice": 570000,
+    "currentSellingPrice": 510000,
+    "description": "Áo sơ mi tay suông trẻ trung - lựa chọn tinh tế cho những cô nàng hiện đại. Đơn giản nhưng vẫn cuốn hút, thích hợp cho cả môi trường công sở lẫn gặp gỡ bạn bè.",
+    "images": [
+      "./asset/img/SoMiSuongTayDai_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Tay suông thoải mái, không gò bó.",
+      "Màu sắc trẻ trung, dễ phối đồ.",
+      "Đường may tinh xảo, bền đẹp theo thời gian."
+    ],
+    "sizeGuide": [
+      {"size": "S", "chest": "80-86 cm"},
+      {"size": "M", "chest": "87-93 cm"},
+      {"size": "L", "chest": "94-100 cm"}
+    ],
+    "careInstructions": [
+      "Giặt nhẹ, tránh chà xát mạnh.",
+      "Không ngâm lâu với nước xà phòng.",
+      "Ủi ở nhiệt độ trung bình."
+    ]
+  },
+  "S6574": {
+    "name": "Sơ mi tay ngắn thanh lịch",
+    "price": "480.000đ",
+    "listedPrice": 530000,
+    "currentSellingPrice": 480000,
+    "description": "Nét thanh lịch trong từng đường kim mũi chỉ, áo sơ mi tay ngắn thích hợp cho những ngày hè năng động. Vừa trẻ trung vừa lịch sự, phù hợp mọi hoàn cảnh.",
+    "images": [
+      "./asset/img/SoMiSuongTayNgan.png",
+      "./asset/img/SoMiSuongTayNgan_hover.png"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Tay ngắn mát mẻ, phù hợp thời tiết nóng.",
+      "Form slim giúp tôn dáng.",
+      "Vải cao cấp, không nhăn dễ bảo quản."
+    ],
+    "sizeGuide": [
+      {"size": "S", "chest": "80-86 cm"},
+      {"size": "M", "chest": "87-93 cm"},
+      {"size": "L", "chest": "94-100 cm"},
+      {"size": "XL", "chest": "101-107 cm"}
+    ],
+    "careInstructions": [
+      "Giặt máy ở chế độ nhẹ.",
+      "Không sử dụng chất tẩy mạnh.",
+      "Phơi nơi thoáng mát, tránh ánh nắng trực tiếp."
+    ]
+  },
+  "S2314": {
+    "name": "Áo sơ mi Oversize hở cổ",
+    "price": "429.000đ",
+    "listedPrice": 480000,
+    "currentSellingPrice": 429000,
+    "description": "Cá tính và quyến rũ, áo sơ mi oversize hở cổ là điểm nhấn sành điệu cho mọi set đồ. Tự tin thể hiện phong cách với thiết kế phá cách này!",
+    "images": [
+      "./asset/img/SoMiOverSizeHoCo.jpg",
+      "./asset/img/SoMiOverSizeHoCo_Hover.jpg"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Cổ áo hở nhẹ, tạo vẻ đẹp phóng khoáng.",
+      "Form rộng giúp che khuyết điểm tốt.",
+      "Chất liệu mềm mại, mát mẻ."
+    ],
+    "sizeGuide": [
+      {"size": "S", "chest": "84-88 cm"},
+      {"size": "M", "chest": "89-94 cm"},
+      {"size": "L", "chest": "95-100 cm"}
+    ],
+    "careInstructions": [
+      "Giặt riêng lần đầu với sản phẩm sáng màu.",
+      "Ủi nhẹ ở mặt trái áo.",
+      "Không vắt mạnh làm giãn form áo."
+    ]
+  },
+  "S7869": {
+    "name": "Áo sơ Mi Sọc Tù Ngang",
+    "price": "529.000đ",
+    "listedPrice": 579000,
+    "currentSellingPrice": 529000,
+    "description": "Phá cách với họa tiết sọc tù ngang, chiếc áo sơ mi này mang lại cảm giác mới mẻ và năng động, thích hợp cho những bạn trẻ yêu thích sự đổi mới.",
+    "images": [
+      "./asset/img/SoMiSoTuNgang.webp",
+      "./asset/img/SoMiSoTuNgang_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Họa tiết sọc ngang cá tính.",
+      "Chất vải mềm, thấm hút mồ hôi tốt.",
+      "Dễ phối với quần jean, short hoặc chân váy."
+    ],
+    "sizeGuide": [
+      {"size": "S", "chest": "80-86 cm"},
+      {"size": "M", "chest": "87-93 cm"},
+      {"size": "L", "chest": "94-100 cm"},
+      {"size": "XL", "chest": "101-107 cm"}
+    ],
+    "careInstructions": [
+      "Giặt máy ở chế độ nhẹ.",
+      "Không dùng thuốc tẩy.",
+      "Phơi ngang giữ form áo."
+    ]
+  },
+  "S1234": {
+    "name": "Áo Sơ Mi Phối Classic",
+    "price": "479.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 479000,
+    "description": "Sự kết hợp hoàn hảo giữa truyền thống và hiện đại, áo sơ mi phối Classic giúp bạn nổi bật trong mọi hoàn cảnh, từ công sở đến dạo phố.",
+    "images": [
+      "./asset/img/AoSoMiClassic.jpg",
+      "./asset/img/AoSoMiClassic_hover.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Phối màu sang trọng, tinh tế.",
+      "Chất liệu cao cấp, bền màu.",
+      "Form chuẩn, tôn dáng người mặc."
+    ],
+    "sizeGuide": [
+      {"size": "S", "chest": "80-86 cm"},
+      {"size": "M", "chest": "87-93 cm"},
+      {"size": "L", "chest": "94-100 cm"},
+      {"size": "XL", "chest": "101-107 cm"}
+    ],
+    "careInstructions": [
+      "Giặt máy ở chế độ nhẹ.",
+      "Tránh ngâm lâu với nước xà phòng.",
+      "Phơi nơi râm mát."
+    ]
+  },
+  "s9901": {
+    "name": "Quần Jean Xanh Dáng Đứng",
+    "price": "595.000đ",
+    "listedPrice": 650000,
+    "currentSellingPrice": 595000,
+    "description": "Quần jean xanh dáng đứng, biểu tượng của sự trẻ trung và năng động. Sản phẩm giúp bạn tự tin sải bước mỗi ngày, không lo lỗi mốt.",
+    "images": [
+      "./asset/img/QuanJeanDangDung.jpg",
+      "./asset/img/QuanJeanDangDung_hover.webp"
+    ],
+    "sizes": ["28", "29", "30", "31", "32", "33"],
+    "features": [
+      "Chất jean dày dặn, co giãn nhẹ.",
+      "Màu xanh trẻ trung, dễ phối.",
+      "Thiết kế dáng đứng tôn dáng chân."
+    ],
+    "sizeGuide": [
+      {"size": "28", "waist": "72-76 cm", "hip": "90-94 cm"},
+      {"size": "29", "waist": "77-81 cm", "hip": "95-99 cm"},
+      {"size": "30", "waist": "82-86 cm", "hip": "100-104 cm"},
+      {"size": "31", "waist": "87-91 cm", "hip": "105-109 cm"},
+      {"size": "32", "waist": "92-96 cm", "hip": "110-114 cm"},
+      {"size": "33", "waist": "97-101 cm", "hip": "115-119 cm"}
+    ],
+    "careInstructions": [
+      "Giặt riêng với sản phẩm sáng màu.",
+      "Lộn trái khi phơi để giữ màu.",
+      "Không dùng thuốc tẩy mạnh."
+    ]
+  },
+      "A6754": {
+    "name": "Áo Sơ Mi Tay Dài",
+    "price": "450.000đ",
+    "listedPrice": 499000,
+    "currentSellingPrice": 450000,
+    "description": "Áo sơ mi tay dài với phong cách thanh lịch, cổ điển. Mang lại cảm giác chỉn chu nhưng vẫn trẻ trung cho cả ngày làm việc hay đi chơi.",
+    "images": [
+      "./asset/img/SoMiSuongTayDai_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Tay dài thanh lịch, phù hợp nhiều hoàn cảnh.",
+      "Chất liệu vải mềm mại, không nhăn, dễ chăm sóc.",
+      "Dễ phối cùng quần âu, jean hoặc chân váy."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ hoặc giặt tay.",
+      "Không dùng thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ thấp để giữ nếp."
+    ]
+  },
+  "V3473": {
+    "name": "Chân Váy Xòe Dáng Dài",
+    "price": "520.000đ",
+    "listedPrice": 570000,
+    "currentSellingPrice": 520000,
+    "description": "Chân váy xòe dáng dài dịu dàng, phù hợp cho nàng yêu thích sự thanh lịch và nữ tính. Thiết kế tôn dáng giúp bạn tự tin trong mọi hoạt động.",
+    "images": [
+      "./asset/img/ChanVayXeoDangDai.jpg",
+      "./asset/img/ChanVayXeoDangDai_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Dáng váy dài tôn chiều cao, che khuyết điểm tốt.",
+      "Chất vải cao cấp, mát mẻ, nhẹ nhàng.",
+      "Thiết kế xòe nhẹ, phù hợp đi chơi, đi làm hoặc dạo phố."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "waist": "65-70 cm", "hip": "90-94 cm" },
+      { "size": "L", "waist": "71-76 cm", "hip": "95-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ với nước lạnh.",
+      "Tránh vắt xoắn mạnh giữ dáng váy.",
+      "Ủi ở nhiệt độ thấp, phơi ở nơi râm mát."
+    ]
+  },
+  "F9867": {
+    "name": "Áo Sơ Mi Sọc Oversize",
+    "price": "499.000đ",
+    "listedPrice": 550000,
+    "currentSellingPrice": 499000,
+    "description": "Áo sơ mi sọc oversize cá tính – lựa chọn hoàn hảo cho phong cách trẻ trung. Phối hợp dễ dàng với mọi loại quần hoặc chân váy.",
+    "images": [
+      "./asset/img/AoSoMiSocDen.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Họa tiết sọc đen trắng hiện đại.",
+      "Form oversize thoải mái, phù hợp nhiều dáng người.",
+      "Chất vải mềm, dễ chăm sóc và không nhăn."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt riêng lần đầu để tránh phai màu.",
+      "Không dùng thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ vừa phải."
+    ]
+  },
+  "Q8654": {
+    "name": "Quần Jean Lửng",
+    "price": "550.000đ",
+    "listedPrice": 600000,
+    "currentSellingPrice": 550000,
+    "description": "Quần jean lửng trẻ trung, cá tính với độ dài vừa phải, tôn lên vẻ năng động cho người mặc. Dễ phối với nhiều kiểu áo, phù hợp cho cả đi làm lẫn đi chơi.",
+    "images": [
+      "./asset/img/QuanJeanLung.webp",
+      "./asset/img/QuanJeanLung_hover.webp"
+    ],
+    "sizes": ["28", "29", "30", "31", "32", "33"],
+    "features": [
+      "Chất jean cao cấp, co giãn nhẹ.",
+      "Dáng lửng hiện đại, trẻ trung.",
+      "Phù hợp nhiều dáng người."
+    ],
+    "sizeGuide": [
+      { "size": "28", "waist": "72-76 cm", "hip": "90-94 cm" },
+      { "size": "29", "waist": "77-81 cm", "hip": "95-99 cm" },
+      { "size": "30", "waist": "82-86 cm", "hip": "100-104 cm" },
+      { "size": "31", "waist": "87-91 cm", "hip": "105-109 cm" },
+      { "size": "32", "waist": "92-96 cm", "hip": "110-114 cm" },
+      { "size": "33", "waist": "97-101 cm", "hip": "115-119 cm" }
+    ],
+    "careInstructions": [
+      "Giặt riêng với sản phẩm sáng màu lần đầu.",
+      "Lộn trái khi phơi giữ màu đẹp.",
+      "Không dùng thuốc tẩy mạnh."
+    ]
+  },
+  "A9788": {
+    "name": "Áo Sơ Mi Trơn",
+    "price": "470.000đ",
+    "listedPrice": 499000,
+    "currentSellingPrice": 470000,
+    "description": "Áo sơ mi trơn tối giản, phù hợp cho những ngày cần sự chỉn chu nhưng vẫn giữ nét trẻ trung, hiện đại.",
+    "images": [
+      "./asset/img/AoSoMiTron.webp",
+      "./asset/img/AoSoMiTron_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Chất vải mềm mại, mát mẻ.",
+      "Form suông dễ mặc, phù hợp nhiều dáng người.",
+      "Màu sắc trung tính dễ phối đồ."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ với nước lạnh.",
+      "Không ngâm quá lâu trong nước xà phòng.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  },
+  "A3452": {
+    "name": "Áo Sơ Mi Sọc",
+    "price": "490.000đ",
+    "listedPrice": 540000,
+    "currentSellingPrice": 490000,
+    "description": "Áo sơ mi sọc thanh lịch, trẻ trung, dễ phối với mọi loại quần hoặc chân váy. Phù hợp nhiều dịp từ công sở đến dạo phố.",
+    "images": [
+      "./asset/img/ChanVayXoe2Tang.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Họa tiết sọc nổi bật, cuốn hút.",
+      "Chất liệu vải mềm, thoáng mát.",
+      "Form dáng hiện đại."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy ở chế độ nhẹ.",
+      "Không dùng thuốc tẩy mạnh.",
+      "Phơi nơi râm mát giữ màu lâu bền."
+    ]
+  },
+  "Q9860": {
+    "name": "Quần Jean Rộng",
+    "price": "580.000đ",
+    "listedPrice": 640000,
+    "currentSellingPrice": 580000,
+    "description": "Quần jean ống rộng cá tính, thoải mái vận động, hợp trend cho các bạn trẻ yêu phong cách tự do, năng động.",
+    "images": [
+      "./asset/img/QuanJeanRong.jpg",
+      "./asset/img/QuanJeanRong_hover.webp"
+    ],
+    "sizes": ["28", "29", "30", "31", "32", "33"],
+    "features": [
+      "Ống rộng trendy, dễ phối nhiều kiểu áo.",
+      "Chất jean bền, không phai màu.",
+      "Co giãn nhẹ, thoải mái hoạt động."
+    ],
+    "sizeGuide": [
+      { "size": "28", "waist": "72-76 cm", "hip": "90-94 cm" },
+      { "size": "29", "waist": "77-81 cm", "hip": "95-99 cm" },
+      { "size": "30", "waist": "82-86 cm", "hip": "100-104 cm" },
+      { "size": "31", "waist": "87-91 cm", "hip": "105-109 cm" },
+      { "size": "32", "waist": "92-96 cm", "hip": "110-114 cm" },
+      { "size": "33", "waist": "97-101 cm", "hip": "115-119 cm" }
+    ],
+    "careInstructions": [
+      "Giặt riêng với sản phẩm sáng màu.",
+      "Không dùng thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ thấp giữ dáng quần."
+    ]
+  },
+  "V7684": {
+    "name": "Chân Váy Bút Chì",
+    "price": "460.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 460000,
+    "description": "Chân váy bút chì tôn dáng, sang trọng, giúp bạn ghi điểm trong mắt đồng nghiệp, đối tác hay bạn bè.",
+    "images": [
+      "./asset/img/VayButChi.jpg",
+      "./asset/img/ChanVayBuiChi_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Dáng bút chì ôm sát, khoe đường cong nhẹ nhàng.",
+      "Chất vải dày dặn, đứng form.",
+      "Phù hợp đi làm, dự tiệc hoặc dạo phố."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "waist": "65-70 cm", "hip": "90-94 cm" },
+      { "size": "L", "waist": "71-76 cm", "hip": "95-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt tay hoặc giặt máy nhẹ.",
+      "Không vắt mạnh giữ dáng váy.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  },
+"A9865": {
+    "name": "Áo Sơ Mi Oversize",
+    "price": "510.000đ",
+    "listedPrice": 570000,
+    "currentSellingPrice": 510000,
+    "description": "Mang hơi thở hiện đại, áo sơ mi oversize giúp bạn phá bỏ mọi giới hạn về phong cách. Hợp xu hướng, hợp mọi hoàn cảnh!",
+    "images": [
+      "./asset/img/SoMiOverSizeHoCo.jpg",
+      "./asset/img/SoMiOverSizeHoCo_Hover.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Form oversize thoải mái, cực dễ phối đồ.",
+      "Chất vải mềm mại, mát mẻ.",
+      "Tôn lên cá tính và gu thời trang riêng."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ, tránh thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ vừa phải.",
+      "Phơi nơi râm mát giữ màu áo lâu bền."
+    ]
+  },
+  "A5738": {
+    "name": "Áo Thun Polo",
+    "price": "440.000đ",
+    "listedPrice": 480000,
+    "currentSellingPrice": 440000,
+    "description": "Áo thun Polo cổ cao – lựa chọn hoàn hảo cho những ai yêu sự năng động, trẻ trung nhưng không kém phần lịch lãm.",
+    "images": [
+      "./asset/img/AoThunPoloCoCao.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Cổ cao thời thượng, tăng nét nam tính.",
+      "Chất liệu thun co giãn, thấm hút tốt.",
+      "Dễ phối cùng quần jeans, kaki hoặc short."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Lộn trái khi giặt và phơi.",
+      "Tránh sấy nhiệt độ cao.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  },
+  "A5763": {
+    "name": "Áo sơ mi Classic",
+    "price": "470.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 470000,
+    "description": "Sơ mi Classic – thanh lịch, đơn giản nhưng luôn nổi bật. Sự lựa chọn dành cho những tín đồ thời trang yêu thích sự tối giản.",
+    "images": [
+      "./asset/img/AoSoMiClassic.jpg",
+      "./asset/img/AoSoMiClassic_hover.jpg"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Form cổ điển, dễ mặc trong mọi dịp.",
+      "Chất vải mịn, không nhăn.",
+      "Màu sắc nhã nhặn, dễ phối đồ."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt tay hoặc giặt máy nhẹ.",
+      "Không dùng thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  },
+  "V6875": {
+    "name": "Chân Váy Chữ A có túi trước",
+    "price": "470.000đ",
+    "listedPrice": 540000,
+    "currentSellingPrice": 470000,
+    "description": "Chân váy chữ A có túi trước – thiết kế trẻ trung, tiện dụng giúp bạn tự tin vận động mà vẫn giữ được nét nữ tính dịu dàng.",
+    "images": [
+      "./asset/img/VayChuACoTuiTruoc.webp",
+      "./asset/img/VayChuACoTuiTruoc_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Dáng chữ A tôn chân dài, năng động.",
+      "Có túi trước tiện dụng để đựng đồ nhỏ.",
+      "Chất vải mềm, thoáng mát."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "waist": "65-70 cm", "hip": "90-94 cm" },
+      { "size": "L", "waist": "71-76 cm", "hip": "95-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ bằng tay hoặc máy.",
+      "Ủi ở nhiệt độ thấp.",
+      "Phơi nơi râm mát giữ màu sắc."
+    ]
+  },
+  "A8678": {
+    "name": "Áo Sơ Mi Kiểu Cổ Rủ",
+    "price": "490.000đ",
+    "listedPrice": 540000,
+    "currentSellingPrice": 490000,
+    "description": "Áo sơ mi kiểu cổ rủ – phá cách, quyến rũ dành cho nàng cá tính. Đường cắt lạ mắt giúp bạn luôn nổi bật giữa đám đông.",
+    "images": [
+      "./asset/img/AoKieuCoRu.webp",
+      "./asset/img/AoKieuCoRu_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Cổ rủ mềm mại, tôn nét nữ tính.",
+      "Form dáng trẻ trung, hợp xu hướng.",
+      "Chất vải mát, không nhăn."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy ở chế độ nhẹ.",
+      "Không dùng thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ thấp."
+    ]
+  },
+  "A9999": {
+    "name": "Áo Sơ Mi Họa Tiết Hoa",
+    "price": "530.000đ",
+    "listedPrice": 590000,
+    "currentSellingPrice": 530000,
+    "description": "Áo sơ mi họa tiết hoa – dịu dàng mà nổi bật, mang đến nét đẹp tươi mới cho mọi ngày của bạn.",
+    "images": [
+      "./asset/img/AoHoaTietHoa.webp",
+      "./asset/img/AoHoaTietHoa_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Họa tiết hoa rực rỡ, trẻ trung.",
+      "Chất vải mềm mại, thoáng khí.",
+      "Phù hợp cả đi làm lẫn dạo phố."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ, tránh thuốc tẩy mạnh.",
+      "Ủi ở nhiệt độ vừa phải.",
+      "Phơi nơi râm mát."
+    ]
+  },
+  "Q7875": {
+    "name": "Quần Tây Rộng Nâu",
+    "price": "560.000đ",
+    "listedPrice": 620000,
+    "currentSellingPrice": 560000,
+    "description": "Quần tây rộng nâu – bí quyết hack chiều cao, che khuyết điểm cực đỉnh. Phù hợp cả đi làm, đi chơi hay dự tiệc.",
+    "images": [
+      "./asset/img/QuanTayRongNau.jpg",
+      "./asset/img/QuanTayRongNau_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Ống rộng thoải mái, hợp trend.",
+      "Màu nâu thanh lịch, dễ phối áo.",
+      "Chất vải đứng form, không nhăn."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "66-70 cm", "hip": "90-94 cm" },
+      { "size": "M", "waist": "71-76 cm", "hip": "95-100 cm" },
+      { "size": "L", "waist": "77-81 cm", "hip": "101-105 cm" },
+      { "size": "XL", "waist": "82-86 cm", "hip": "106-110 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ hoặc giặt tay.",
+      "Ủi ở nhiệt độ vừa phải.",
+      "Phơi nơi râm mát."
+    ]
+  },
+  "V0000": {
+    "name": "Chân Váy Đuôi Cá Lụa",
+    "price": "500.000đ",
+    "listedPrice": 570000,
+    "currentSellingPrice": 500000,
+    "description": "Chân váy đuôi cá lụa – mềm mại, uyển chuyển trong từng bước đi. Sản phẩm giúp bạn tỏa sáng với phong thái kiêu sa, nữ tính.",
+    "images": [
+      "./asset/img/VayDuoiCaLua.webp",
+      "./asset/img/VayDuoiCaLua_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Dáng đuôi cá ôm eo, tôn dáng.",
+      "Chất lụa cao cấp, mát mịn.",
+      "Di chuyển nhẹ nhàng, uyển chuyển."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "waist": "65-70 cm", "hip": "90-94 cm" },
+      { "size": "L", "waist": "71-76 cm", "hip": "95-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt bằng tay, không vắt mạnh.",
+      "Ủi ở nhiệt độ thấp.",
+      "Phơi nơi râm mát, tránh nắng gắt."
+    ]   // Thêm các sản phẩm khác vào đây tương tự
+	  
+  },
+			"FAS356": {
+    "name": "Áo Sơ Mi Tay Ngắn+Túi",
+    "price": "450.000đ",
+    "listedPrice": 499000,
+    "currentSellingPrice": 450000,
+    "description": "Muốn vừa mát mẻ vừa tiện lợi? Áo sơ mi tay ngắn có túi chính là lựa chọn “chill” cho những ngày nắng đẹp. Đừng quên bỏ điện thoại vào túi và đi “quẩy” cùng nhóm bạn nhé!",
+    "images": [
+      "./asset/img/AoSoMiNgan_Tui.webp",
+      "./asset/img/AoSoMiNgan_Tui_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Túi siêu to, chứa cả bầu trời nắng hè!",
+      "Thiết kế trẻ trung, năng động, diện lên là auto tươi.",
+      "Vải mềm, thoáng khí, mặc vào là thích mê ngay."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt tay hoặc máy đều ok, đừng vắt mạnh kẻo túi buồn!",
+      "Ủi nhẹ nhàng để áo luôn phẳng phiu.",
+      "Phơi nơi có gió, áo sẽ thơm như mùi nắng!"
+    ]
+  },
+  "S0109": {
+    "name": "Áo sơ mi Oversize Khoát ngoài",
+    "price": "400.000đ",
+    "listedPrice": 450000,
+    "currentSellingPrice": 400000,
+    "description": "Mặc áo này lên là “auto” cá tính! Áo sơ mi oversize khoác ngoài, chuẩn gu người trẻ, đi đâu cũng thấy nổi bật. Đừng ngại layer với áo thun để style thêm chất nhé!",
+    "images": [
+      "./asset/img/SoMiOverSizeCoDuoi.webp",
+      "./asset/img/SoMiOverSizeCoDuoi_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Form rộng cực cool, che nắng che mưa đều xịn.",
+      "Chất vải mát lạnh, lướt nhẹ qua mọi ngày hè.",
+      "Layer kiểu gì cũng chất, mix quần short hay jean đều hợp."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "84-88 cm" },
+      { "size": "M", "chest": "89-95 cm" },
+      { "size": "L", "chest": "96-102 cm" },
+      { "size": "XL", "chest": "103-108 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ nhàng, đừng để áo “hờn”.",
+      "Ủi ở nhiệt độ vừa phải, áo sẽ cảm ơn bạn!",
+      "Đừng quên phơi nơi có nắng nhé, áo thích vitamin D lắm!"
+    ]
+  },
+  "S9077": {
+    "name": "Áo sơ mi tay suông trẻ trung",
+    "price": "510.000đ",
+    "listedPrice": 570000,
+    "currentSellingPrice": 510000,
+    "description": "Đã đến lúc vẫy tay tạm biệt những chiếc áo boring! Sắm ngay áo sơ mi tay suông, trẻ trung, năng động, mặc là thấy yêu đời ngay. Cẩn thận, mặc vào dễ bị “khen” lắm đó!",
+    "images": [
+      "./asset/img/SoMiSuongTayDai_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Tay suông rộng, vẫy gọi tự do!",
+      "Không kén dáng, ai mặc cũng đẹp.",
+      "Phối cùng quần jean hay váy đều “okela”."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ, tránh vặn xoắn, áo thích được nâng niu mà!",
+      "Ủi khi áo còn hơi ẩm, phẳng lì luôn.",
+      "Đừng để áo buồn nằm lâu trong máy giặt nhé!"
+    ]
+  },
+  
+  "S2314": {
+    "name": "Áo sơ mi Oversize hở cổ",
+    "price": "429.000đ",
+    "listedPrice": 480000,
+    "currentSellingPrice": 429000,
+    "description": "Bạn đang muốn “đổi gió” cho tủ đồ? Áo sơ mi oversize hở cổ là lựa chọn không thể bỏ qua! Nhìn là muốn thử, mặc là ghiền, ai cũng phải ngoái nhìn.",
+    "images": [
+      "./asset/img/SoMiOverSizeHoCo.jpg",
+      "./asset/img/SoMiOverSizeHoCo_Hover.jpg"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Cổ áo hở nhẹ, khoe khéo cá tính.",
+      "Form rộng, hợp mọi phong cách.",
+      "Chất vải mềm, mát lạnh, mặc là phê!"
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "84-88 cm" },
+      { "size": "M", "chest": "89-94 cm" },
+      { "size": "L", "chest": "95-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ, phơi chỗ gió cho áo “bay bổng”.",
+      "Ủi nhẹ nhàng, đừng làm áo “nóng giận”.",
+      "Cất áo vào tủ, nhớ đừng để áo cô đơn lâu nhé!"
+    ]
+  },
+  "S7869": {
+    "name": "Áo sơ Mi Sọc Tù Ngang",
+    "price": "529.000đ",
+    "listedPrice": 579000,
+    "currentSellingPrice": 529000,
+    "description": "Sọc tù ngang – mặc là kéo mood lên ngang ngửa trời xanh! Style cá tính, hợp đi chơi, đi học, đi làm, còn chờ gì mà không “bốc” ngay một em?",
+    "images": [
+      "./asset/img/SoMiSoTuNgang.webp",
+      "./asset/img/SoMiSoTuNgang_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Sọc cá tính, ai mặc cũng khác biệt.",
+      "Form rộng, thoải mái “quẩy” hết mình.",
+      "Vải mềm, sờ phát là mê!"
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Nhẹ tay với áo, áo thích được chiều chuộng.",
+      "Ủi nhẹ, tránh để áo “nóng tính”.",
+      "Phơi gió, tránh nắng gắt nha!"
+    ]
+  },
+"FQR037": {
+    "name": "Quần Ống Rộng Sọc",
+    "price": "480.000đ",
+    "listedPrice": 530000,
+    "currentSellingPrice": 480000,
+    "description": "Quần ống rộng sọc – mặc vào là chân dài miên man, style cá tính, hack dáng đỉnh cao! Sọc dọc giúp bạn trông thon gọn, phối đơn giản mà vẫn nổi bần bật giữa phố.",
+    "images": [
+      "./asset/img/QuanOngRongSoc1.webp",
+      "./asset/img/QuanOngRongSoc1_hover.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Ống rộng trendy, giấu nhẹm khuyết điểm.",
+      "Sọc dọc hack dáng, lên hình là thấy chân dài.",
+      "Vải mềm, mát, mặc cả ngày vẫn dễ chịu."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-66 cm", "hip": "86-92 cm" },
+      { "size": "M", "waist": "67-73 cm", "hip": "93-99 cm" },
+      { "size": "L", "waist": "74-80 cm", "hip": "100-106 cm" },
+      { "size": "XL", "waist": "81-87 cm", "hip": "107-113 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ, quần thích đi 'bơi' chậm rãi.",
+      "Ủi ở nhiệt độ thấp, đừng làm quần 'nóng mặt'.",
+      "Phơi nơi râm mát, quần sẽ luôn tươi mới như mood bạn!"
+    ]
+  },
+			"YAS249": {
+    "name": "Áo Sơ Mi Cơ Bản",
+    "price": "495.000đ",
+    "listedPrice": 550000,
+    "currentSellingPrice": 495000,
+    "description": "Áo sơ mi cơ bản – item không thể thiếu cho mọi tủ đồ! Dễ phối, dễ diện, mặc đi học, đi làm hay cà phê đều chuẩn chỉnh. Diện lên là thấy tự tin, style lên hẳn vài bậc!",
+    "images": [
+      "./asset/img/AoSoMiCoBan1.webp",
+      "./asset/img/AoSoMiCoBan1_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Form basic quốc dân, ai mặc cũng hợp.",
+      "Vải mềm, mịn, không nhăn, mặc là mê.",
+      "Phối được với mọi loại quần, váy, thậm chí mặc khoác ngoài cũng siêu xinh."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ, áo thích đi dạo với nước mát.",
+      "Ủi sơ sơ là xịn liền, không cần cầu kỳ đâu nè.",
+      "Phơi nơi râm mát, áo sẽ luôn thơm tho, sẵn sàng cùng bạn đi khắp thế gian!"
+    ]
+			,
+				"FQR036": {
+    "name": "Quần Ống Rộng Trơn",
+    "price": "295,000₫",
+    "listedPrice": 350000,
+    "currentSellingPrice": 295000,
+    "description": "Quần ống rộng trơn - item quốc dân cho những ngày muốn 'bung xõa' mà vẫn cực kỳ trendy! Dễ mặc, dễ phối, lên form đẹp mà không cần suy nghĩ nhiều. Quần này giúp bạn hack dáng, hack mood, mặc là yêu ngay!",
+    "images": [
+      "./asset/img/QuanOngRongTron1.jpg",
+      "./asset/img/QuanOngRongTron1_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Ống rộng basic, giấu khuyết điểm siêu đỉnh.",
+      "Vải mềm mịn, mặc mát mẻ cả ngày.",
+      "Màu sắc dễ phối, hợp mọi phong cách từ nhẹ nhàng đến cá tính."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-66 cm", "hip": "86-92 cm" },
+      { "size": "M", "waist": "67-73 cm", "hip": "93-99 cm" },
+      { "size": "L", "waist": "74-80 cm", "hip": "100-106 cm" },
+      { "size": "XL", "waist": "81-87 cm", "hip": "107-113 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ hoặc giặt tay, quần không thích bị vắt mạnh đâu nha!",
+      "Ủi sơ với nhiệt độ thấp, quần sẽ luôn thẳng thớm, sẵn sàng vi vu.",
+      "Phơi nơi râm mát, quần sẽ 'happy' với bạn cả tuần!"
+    ]
+  },
+				"QK990": {
+    "name": "Quần Ống Rộng Xếp Ly",
+    "price": "595,000₫",
+    "listedPrice": 650000,
+    "currentSellingPrice": 595000,
+    "description": "Quần ống rộng xếp ly – 'chiếc quần quốc dân' cho những ngày cần sự thoải mái mà vẫn muốn style xịn sò! Xếp ly tinh tế giúp tôn dáng, phối đồ cực dễ, đi đâu ai cũng phải ngoái nhìn.",
+    "images": [
+      "asset/img/Quần Ống Rộng Xếp L1.jpg",
+      "asset/img/Quần Ống Rộng Xếp Ly.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Ống rộng trendy, mặc vào là chân dài miên man.",
+      "Xếp ly phía trước tăng vẻ thanh lịch, hack dáng cực đỉnh.",
+      "Chất vải mềm, thoáng, mặc đi chơi hay đi làm đều ổn áp."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-66 cm", "hip": "86-92 cm" },
+      { "size": "M", "waist": "67-73 cm", "hip": "93-99 cm" },
+      { "size": "L", "waist": "74-80 cm", "hip": "100-106 cm" },
+      { "size": "XL", "waist": "81-87 cm", "hip": "107-113 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ nhàng để giữ xếp ly luôn như mới.",
+      "Ủi ở nhiệt độ thấp, quần sẽ phẳng đẹp, không lo mất dáng.",
+      "Phơi nơi râm mát, quần thích 'tận hưởng' gió trời cùng bạn!"
+    ]
+  },"QK090": {
+    "name": "Chân Váy Linen Hoa Xòe",
+    "price": "395,000₫",
+    "listedPrice": 450000,
+    "currentSellingPrice": 395000,
+    "description": "Chân váy linen hoa xòe – diện lên là hóa nàng thơ giữa mùa hè! Họa tiết hoa nhẹ nhàng, xòe bồng bềnh, mỗi bước đi là một màn 'tung váy' rực rỡ. Linen mát dịu, mặc cả ngày vẫn siêu thoải mái.",
+    "images": [
+      "asset/img/Chân Váy Linen Hoa Xòe.webp",
+      "asset/img/Chân Váy Linen Hoa Xòe 1.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Linen thoáng mát, thấm hút mồ hôi tuyệt vời.",
+      "Dáng xòe bồng bềnh, lên hình là auto xinh.",
+      "Họa tiết hoa tươi tắn, mỗi ngày là một ngày vui."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "waist": "66-71 cm", "hip": "90-95 cm" },
+      { "size": "L", "waist": "72-77 cm", "hip": "96-102 cm" }
+    ],
+    "careInstructions": [
+      "Giặt tay nhẹ nhàng để váy luôn bồng bềnh.",
+      "Ủi ở nhiệt độ thấp, váy thích được chăm chút đó nha!",
+      "Phơi nơi râm mát, váy sẽ luôn thơm tho, tươi mới."
+    ]
+  },
+  "S5757": {
+    "name": "Áo Sơ Mi Phối Classic",
+    "price": "479.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 479000,
+    "description": "Classic nhưng không hề nhàm chán! Áo sơ mi phối Classic – mặc đi gặp crush là auto được khen “gu”. Lên đồ ngay, rủ bạn thân mặc đôi càng vui.",
+    "images": [
+      "./asset/img/AoSoMiClassic.jpg",
+      "./asset/img/AoSoMiClassic_hover.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Phối màu chuẩn xịn, không lo lỗi thời.",
+      "Form vừa vặn, mặc lên là thấy thích.",
+      "Chất vải cực mát, không sợ nóng."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ, đừng “bạo lực” với áo nha.",
+      "Ủi sơ sơ là phẳng phiu ngay.",
+      "Phơi nơi có gió, áo sẽ thơm hơn đó!"
+    ]
+  },
+				"CC12": {
+    "name": "Quần Jean Suông Pancy",
+    "price": "595,000₫",
+    "listedPrice": 650000,
+    "currentSellingPrice": 595000,
+    "description": "Quần jean suông Pancy – chuẩn trendy, diện lên là chân dài miên man, style cá tính khỏi bàn! Chất jean dày dặn, dáng suông hack dáng cực đỉnh, phối áo gì cũng auto đẹp.",
+    "images": [
+      "asset/img/QuanJeanSuong1_hover.jpg",
+      "asset/img/QuanJeanSuong1.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Form suông hiện đại, lên dáng cực chất.",
+      "Chất jean bền, không bai nhão, mặc càng lâu càng đẹp.",
+      "Màu xanh basic dễ phối, mặc đi học, đi làm hay đi chơi đều hợp."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "62-68 cm", "hip": "86-92 cm" },
+      { "size": "M", "waist": "69-75 cm", "hip": "93-99 cm" },
+      { "size": "L", "waist": "76-82 cm", "hip": "100-106 cm" },
+      { "size": "XL", "waist": "83-89 cm", "hip": "107-113 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ hoặc giặt tay, tránh dùng chất tẩy mạnh để jean luôn bền màu.",
+      "Phơi nơi râm mát, tránh ánh nắng trực tiếp để vải không bị bạc màu.",
+      "Ủi ở nhiệt độ vừa phải, quần jean thích sự dịu dàng!"
+    ]
+  },
+  "FAS345": {
+    "name": "Áo Họa Tiết Hoa",
+    "price": "495.000₫",
+    "listedPrice": 540000,
+    "currentSellingPrice": 495000,
+    "description": "Này là Áo Họa Tiết Hoa, nhưng mặc lên là “không thường” chút nào đâu nha! Đảm bảo ai thấy cũng phải hỏi bạn mua ở đâu đấy!",
+    "images": [
+      "./asset/img/AoHoaTietHoa.webp",
+      "./asset/img/AoHoaTietHoa_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Họa tiết hoa cá tính, nổi bật giữa đám đông.",
+      "Vải mát, mặc là mê, đi đâu cũng muốn mặc.",
+      "Form chuẩn, mặc lên là “auto đẹp trai/xinh gái”."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt riêng lần đầu cho áo làm quen nước.",
+      "Ủi nhẹ, áo sẽ cảm ơn bạn bằng sự phẳng phiu.",
+      "Cất áo vào tủ nhớ rủ thêm bạn áo khác cho vui!"
+    ],
+  },
+	
+  "FAS324": {
+    "name": "Áo Sơ Mi Hoạ Tiết Regular",
+    "price": "450.000đ",
+    "listedPrice": 500000,
+    "currentSellingPrice": 450000,
+    "description": "Bạn thích nổi bật mà vẫn thanh lịch? Áo sơ mi họa tiết Regular chính là lựa chọn 'chuẩn bài' cho ngày mới rực rỡ. Mặc lên là thấy tự tin xuống phố, ai cũng phải ngoái nhìn!",
+    "images": [
+      "./asset/img/SoMiSuongTayDai_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Họa tiết độc đáo, diện là 'auto' nổi bật!",
+      "Form regular dễ mặc, ai cũng hợp.",
+      "Chất vải mềm, mát lạnh, mặc hoài không chán."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Nhớ giặt riêng lần đầu để áo 'làm quen' với bạn nhé!",
+      "Ủi nhẹ nhàng, đừng để áo 'giận dỗi'.",
+      "Phơi nơi râm mát cho áo luôn tươi mới."
+    ]
+  },
+  "FAS322": {
+    "name": "Áo Sơ Mi Hoạ Tiết Regar-Ri",
+    "price": "420.000đ",
+    "listedPrice": 470000,
+    "currentSellingPrice": 420000,
+    "description": "Muốn 'đổi gió' phong cách? Áo sơ mi họa tiết Regar-Ri sẽ giúp bạn nổi bật, trẻ trung và luôn tươi vui như ngày hội! Mặc đi làm hay đi chơi đều xinh lung linh.",
+    "images": [
+      "./asset/img/AoSoMiRegular_FAS324.jpg",
+      "./asset/img/AoSoMiRegular_FAS324_hover.jpg"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Họa tiết lạ mắt, nhìn là mê.",
+      "Form chuẩn, dễ phối mọi outfit.",
+      "Vải nhẹ, mặc lên là thấy 'zui ze' cả ngày."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt tay hoặc máy đều ổn, nhưng đừng 'bạo lực' quá nha!",
+      "Ủi sơ là phẳng ngay, không mất công chút nào.",
+      "Phơi lên là áo lại sẵn sàng cùng bạn vi vu."
+    ]
+  },
+  "F1167": {
+    "name": "Áo Sơ Mi Sọc Oversize",
+    "price": "499.000đ",
+    "listedPrice": 550000,
+    "currentSellingPrice": 499000,
+    "description": "Áo sơ mi sọc oversize cá tính – diện vào là mood lên cao vút! Dành cho những ai thích 'bung xõa' và luôn muốn khác biệt.",
+    "images": [
+      "./asset/img/AoSoMiSocDen.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Sọc cá tính, không lo đụng hàng.",
+      "Form rộng cực 'chill', tha hồ hoạt động.",
+      "Vải siêu mát, mặc vào là cứ muốn 'đu đưa'."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt máy nhẹ nhàng, đừng để áo buồn nha!",
+      "Ủi sơ sơ là phẳng ngay.",
+      "Phơi gió, tránh nắng gắt cho áo luôn tươi."
+    ]
+  },
+  "FAS274": {
+    "name": "Áo Sơ Mi Cúc Ngọc Trai",
+    "price": "550.000đ",
+    "listedPrice": 620000,
+    "currentSellingPrice": 550000,
+    "description": "Đỉnh cao sang chảnh là đây! Áo sơ mi cúc ngọc trai, diện lên là 'chanh sả', sang xịn hết nấc. Lên đồ đi trà sữa là auto được khen liền!",
+    "images": [
+      "./asset/img/AoSoMiSocNutNgocTrai.jpg",
+      "./asset/img/AoSoMiSocNutNgocTrai_hover.jpg"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Cúc ngọc trai xinh xắn, nhìn là mê.",
+      "Form basic, dễ phối mọi lúc mọi nơi.",
+      "Vải dày dặn, đứng form, mặc lên là chuẩn gu."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt riêng lần đầu cho áo làm quen nước.",
+      "Ủi nhẹ, áo sẽ cảm ơn bạn bằng sự phẳng phiu.",
+      "Cất áo vào tủ nhớ rủ thêm bạn áo khác cho vui!"
+    ]
+  },
+  "C8765": {
+    "name": "Áo Sơ Mi Trơn",
+    "price": "470.000đ",
+    "listedPrice": 520000,
+    "currentSellingPrice": 470000,
+    "description": "Ai bảo trơn là đơn điệu? Áo sơ mi trơn này diện lên là thăng hạng style, đi đâu cũng được khen ngầu! Mặc đi học, đi chơi, đi làm đều hợp lý hết nha.",
+    "images": [
+      "./asset/img/AoSoMiTron.webp",
+      "./asset/img/AoSoMiTron_hover.webp"
+    ],
+    "sizes": ["S", "M", "L", "XL"],
+    "features": [
+      "Thiết kế tối giản, phối đồ siêu dễ.",
+      "Form chuẩn, lên dáng cực xinh.",
+      "Chất vải mềm, mát và không nhăn."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Áo thích được giặt máy nhẹ hoặc giặt tay nha!",
+      "Ủi sơ sơ là phẳng phiu ngay.",
+      "Phơi nơi gió mát, áo sẽ rất cảm kích bạn!"
+    ]
+  },
+  "S1756": {
+    "name": "Áo Sơ Mi Sọc Xanh",
+    "price": "490.000đ",
+    "listedPrice": 540000,
+    "currentSellingPrice": 490000,
+    "description": "Muốn ngày mới tươi xanh như mơ? Áo sơ mi sọc xanh sẽ giúp bạn nổi bật nhưng vẫn dịu dàng. Mặc lên là thấy yêu đời, gặp ai cũng cười tươi như hoa.",
+    "images": [
+      "./asset/img/ChanVayXoe2Tang.jpg",
+      "./asset/img/AoSoMiSocXanh_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Sọc xanh trẻ trung, nổi bật giữa đám đông.",
+      "Form vừa vặn, dễ mặc dễ phối.",
+      "Vải mát lạnh, mặc lên là thấy yêu đời liền."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ, tránh ngâm lâu cho màu áo bền đẹp.",
+      "Ủi ở nhiệt độ nhẹ thôi nha!",
+      "Phơi nơi râm mát, áo thích vậy nhất!"
+    ]
+  },
+  "FTS290": {
+    "name": "Áo Sơ Mi Trơn",
+    "price": "390.000đ",
+    "listedPrice": 450000,
+    "currentSellingPrice": 390000,
+    "description": "Đơn giản mà chất lừ! Áo sơ mi trơn này là 'vũ khí' bí mật của mọi tín đồ thời trang. Mặc lên tự tin cả ngày, đi đâu cũng thấy vui vẻ, năng động.",
+    "images": [
+      "./asset/img/AoSoMiTron2.jpg",
+      "./asset/img/AoSoMiTron2_hover.webp"
+    ],
+    "sizes": ["M", "L", "XL"],
+    "features": [
+      "Thiết kế basic nhưng không hề nhàm chán.",
+      "Chất liệu nhẹ, mát, rất thích hợp ngày hè.",
+      "Form chuẩn, ai mặc cũng đẹp trai/xinh gái lên vài bậc."
+    ],
+    "sizeGuide": [
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt cùng áo màu sáng cho tươi tắn.",
+      "Ủi sơ sơ là phẳng ngay, không cần cầu kỳ.",
+      "Phơi chỗ mát mẻ để áo 'tươi tỉnh' mỗi ngày."
+    ]
+  },
+  "FAS299": {
+    "name": "Áo Sơ Mi Hoa Form Suông Regular",
+    "price": "490.000đ",
+    "listedPrice": 540000,
+    "currentSellingPrice": 490000,
+    "description": "Hoa này không chỉ để ngắm, mà còn để mặc cho tỏa sáng! Áo sơ mi hoa form suông Regular, diện lên là bao tươi, bao xinh. Đảm bảo ai cũng phải ngoái nhìn bạn!",
+    "images": [
+      "./asset/img/AoSoMiFormSuong_Hoa.webp",
+      "./asset/img/AoSoMiFormSuong_Hoa_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Họa tiết hoa tươi tắn, tràn đầy năng lượng.",
+      "Form suông thoải mái, giấu nhẹm khuyết điểm.",
+      "Vải mềm, thích hợp mặc cả bốn mùa."
+    ],
+    "sizeGuide": [
+      { "size": "S", "chest": "80-86 cm" },
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ, đừng để hoa bị 'buồn'.",
+      "Ủi ở nhiệt độ thấp để hoa luôn tươi.",
+      "Phơi nơi có gió, hoa sẽ 'tung tăng' cùng bạn!"
+    ]
+  },
+			"FAS290": {
+    "name": "Áo Sơ Mi Trơn",
+    "price": "390.000đ",
+    "listedPrice": 450000,
+    "currentSellingPrice": 390000,
+    "description": "Đơn giản mà không hề đơn điệu! Áo sơ mi trơn này là lựa chọn cực xịn cho những ngày bạn muốn 'tối giản' mà vẫn nổi bật. Mặc đi làm, đi học hay đi chơi đều hợp, ai nhìn cũng phải gật gù khen 'gu chất'!",
+    "images": [
+      "./asset/img/AoSoMiTron2.jpg",
+      "./asset/img/AoSoMiTron2_hover.webp"
+    ],
+    "sizes": ["M", "L", "XL"],
+    "features": [
+      "Thiết kế basic, phối đồ 'auto' đẹp.",
+      "Chất vải mềm mịn, mặc mát như quạt điều hòa!",
+      "Form vừa vặn, mặc lên là thấy yêu luôn."
+    ],
+    "sizeGuide": [
+      { "size": "M", "chest": "87-93 cm" },
+      { "size": "L", "chest": "94-100 cm" },
+      { "size": "XL", "chest": "101-107 cm" }
+    ],
+    "careInstructions": [
+      "Giặt nhẹ nhàng, đừng để áo 'giận dỗi' nhàu nát nhé!",
+      "Ủi sơ sơ là phẳng phiu, đi chơi là auto đẹp trai/xinh gái.",
+      "Phơi nơi có gió, áo sẽ thơm phức và luôn vui vẻ đồng hành cùng bạn!"
+    ]
+  },
+			"V3473": {
+    "name": "Chân Váy Xòe Dáng Dài",
+    "price": "520.000đ",
+    "listedPrice": 570000,
+    "currentSellingPrice": 520000,
+    "description": "Chân váy xòe dáng dài – 'bảo bối' cho những ngày muốn tung tăng như nàng thơ trên phố! Dáng dài che nắng, tôn dáng, phối với áo nào cũng hợp, chân váy này diện lên là tự tin 'sải bước' như trên sàn runway nha!",
+    "images": [
+      "./asset/img/ChanVayXeoDangDai.jpg",
+      "./asset/img/ChanVayXeoDangDai_hover.webp"
+    ],
+    "sizes": ["S", "M", "L"],
+    "features": [
+      "Dáng xòe dài bồng bềnh, tha hồ xoay vòng selfie.",
+      "Vải mềm mịn, đi nắng không lo nóng.",
+      "Dễ phối đủ kiểu áo, từ thun basic đến croptop bánh bèo."
+    ],
+    "sizeGuide": [
+      { "size": "S", "waist": "60-65 cm", "hip": "85-89 cm" },
+      { "size": "M", "waist": "65-70 cm", "hip": "90-94 cm" },
+      { "size": "L", "waist": "71-76 cm", "hip": "95-100 cm" }
+    ],
+    "careInstructions": [
+      "Giặt tay hoặc máy đều được, nhớ cho chân váy đi bơi nhẹ nhàng.",
+      "Ủi ở nhiệt độ thấp, chân váy thích được vuốt ve dịu dàng.",
+      "Phơi nơi râm mát, chân váy sẽ 'tươi rói' đợi bạn mặc đi chơi!"
+    ]
+  }
+			};
+// JavaScript Document
